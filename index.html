@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeremy D. Wu</title>
+<meta name="description" content="Jeremy D. Wu. AI, econometrics and quantitative research, measuring the social impact of machine learning systems. Causal inference. PhD in mathematics, Penn. MA in statistics, Wharton.">
+<meta name="author" content="Jeremy D. Wu">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <h1>Jeremy D. Wu</h1>
+  <p class="tagline">AI, econometrics and quantitative research.</p>
+  <nav class="links" aria-label="Contact and profiles">
+    <a href="mailto:jeremywu12345@gmail.com">jeremywu12345@gmail.com</a>
+    <a href="https://scholar.google.com/citations?user=RGvMvRIAAAAJ&amp;hl=en">Google Scholar</a>
+    <a href="https://github.com/DWuuuuuu">GitHub</a>
+    <a href="https://www.linkedin.com/in/jeremydwu">LinkedIn</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="intro">
+  <p>I am a mathematician by training. My PhD is in probability theory at the University of Pennsylvania, with a master's in statistics from Wharton taken alongside it. Since then I have published across three areas: causal inference and econometric methods, machine learning and language models, and probability theory. I also build the data pipelines and test harnesses that work of that kind needs.</p>
+  <p>I believe the next real advances in scientific research and in industry will come from people and AI working together. That is how I work day to day. Claude Code and Codex are my primary development workflow, for research code, data pipelines and test suites. Verification is the part I own. I write property-based tests rather than output snapshots.</p>
+  <p>I want to put rigorous quantitative training to work on the societal side of AI, measuring what these systems do to the economy and to the people using them. I work at the intersection of AI and quantitative analysis and want to keep building there.</p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <ul class="roles">
+    <li>
+      <div class="role-head">
+        <span class="org"><a href="https://epi-gram.app">Epigram</a></span>
+        <span class="when">Nov 2025 to present</span>
+      </div>
+      <p class="title">Head of Product</p>
+      <ul class="what-list">
+        <li>Two Ivy League master's programs are institutional customers.</li>
+        <li>I own a labelled corpus of hundreds of probability, statistics and quantitative-reasoning problems, each with multiple verified solution paths, built as instruction material and as an evaluation set for reasoning models.</li>
+        <li>I set the solution approach first and steer the model down it, then check each solution by hand and assign the difficulty, topic and reasoning-type labels myself. Human and AI collaboration is how I think mathematics should be done, and that is how the corpus was built.</li>
+        <li>I ship and operate the production web application and problem database, Next.js on Supabase and Postgres, built with Claude Code and Codex.</li>
+        <li>Selected for the Beta University incubator program in Palo Alto.</li>
+      </ul>
+    </li>
+    <li>
+      <div class="role-head">
+        <span class="org">Mina Analytics</span>
+        <span class="when">Feb 2024 to Oct 2025</span>
+      </div>
+      <p class="title">Head of Quantitative Research</p>
+      <ul class="what-list">
+        <li>Co-authored the Real Estate Model with Chief Economist Charles W. Calomiris and estimated the causal revenue effect of green building certification.</li>
+        <li>Premia of 8.3% for LEED in California and above 7% for Energy Star in California and Florida, with individual properties where certification implied up to $780K in additional annual lease revenue.</li>
+        <li>The estimates come from more than 36,000 building-year observations across 1,322 zip codes, drawn from a proprietary 10-terabyte database built over two years from 10,000 source datasets.</li>
+        <li>Built the AI and NLP measurement layer, engineering features out of noisy unstructured text. GPT-4o with targeted prompt engineering reached near-100% accuracy extracting structured attributes from building descriptions, alongside LDA topic weights and textual sentiment measures.</li>
+        <li>Ran forward selection over 4,900 locational and 100 building-level candidate controls and their interactions, guarded by 9-fold cross-validation on the baseline and 100 cross-validation trials on the treatment model.</li>
+        <li>Separated real effects from spurious fit by cross-checking estimator families that fail differently, putting parametric regression against propensity-score matching and tree-based ensembles, with placebo tests and sensitivity analysis.</li>
+        <li>Presented findings to institutional investors and to the U.S. Securities and Exchange Commission. Supervised junior researchers across data engineering, feature construction and pipeline development.</li>
+      </ul>
+    </li>
+    <li>
+      <div class="role-head">
+        <span class="org">Children's Hospital of Philadelphia</span>
+        <span class="when">Jul 2023 to Jun 2025</span>
+      </div>
+      <p class="title">Research Postdoctoral Fellow</p>
+      <ul class="what-list">
+        <li>Built GestaltMML, the first multimodal machine-learning framework for rare disease diagnosis, raising Top-1 accuracy to 50.1% against 43.0% for the strongest published image-only baseline on a 528-disorder benchmark.</li>
+        <li>Designed and evaluated preference-optimization methods for aligning language models of 3B to 11B parameters, using an upstream multimodal model as the preference generator in place of human expert annotation, since the clinical records are noisy and access-restricted and qualified annotators are scarce.</li>
+        <li>Developed a three-sided testing procedure for observational studies with two control groups, controlling the familywise error rate and bounding sensitivity to unmeasured confounding. Applied to the effect of high-school football participation on subsequent cognitive functioning, with D. Small at Wharton.</li>
+        <li>Built evaluation pipelines for multimodal and longitudinal clinical data, trained multimodal transformers of around 75M parameters, and contributed to pre-training medical foundation models on around 5M temporal clinical records.</li>
+        <li>Characterized the reversal curse and other deductive-reasoning failures in BERT and GPT-family models.</li>
+        <li>Invited speaker, Featured Symposium, 2024 American Society of Human Genetics Annual Meeting.</li>
+      </ul>
+    </li>
+    <li>
+      <div class="role-head">
+        <span class="org">University of Pennsylvania</span>
+        <span class="when">Jan 2024 to May 2024</span>
+      </div>
+      <p class="title">Lecturer</p>
+      <ul class="what-list">
+        <li>Taught PhD-level Probability Theory and Statistics (STAT 9310 / MATH 6490) to doctoral students in statistics, mathematics, and applied mathematics and computational science.</li>
+        <li>Faculty mentor for Undergraduate Research in Probability and Statistics.</li>
+        <li>Co-advised a master's thesis in pure mathematics and served on the defense committee.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <ul class="roles compact">
+    <li>
+      <div class="role-head">
+        <span class="org">University of Pennsylvania</span>
+        <span class="when">2018 to 2023</span>
+      </div>
+      <p class="title">PhD in Mathematics, probability theory</p>
+      <p class="what">Benjamin Franklin Fellowship, Calabi Scholar. Thesis: <a href="https://www.proquest.com/openview/acb2cfdb513656eef041118e019f2f57/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">Topics in Random Conformal Geometry: SLE Bubble Measures, Conformal Weldings of Liouville Quantum Gravity Surfaces, and Applications</a>.</p>
+    </li>
+    <li>
+      <div class="role-head">
+        <span class="org">The Wharton School, University of Pennsylvania</span>
+        <span class="when">2020 to 2022</span>
+      </div>
+      <p class="title">MA in Statistics</p>
+      <p class="what">Econometrics, time series, statistical learning, causal inference.</p>
+    </li>
+    <li>
+      <div class="role-head">
+        <span class="org">McGill University</span>
+        <span class="when">2014 to 2018</span>
+      </div>
+      <p class="title">BSc in Honours Mathematics</p>
+      <p class="what">Ranked first in Honours Mathematics. First Class Honours, Dean's Honour List.</p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Selected work</h2>
+  <ul class="work">
+    <li>
+      <h3><a href="https://epi-gram.app">Epigram</a></h3>
+      <p>A mathematics learning platform, live in production. Quantitative interview problems, each with multiple verified solution paths and labelled by difficulty, topic and reasoning type.</p>
+    </li>
+    <li>
+      <h3><a href="https://github.com/DWuuuuuu/quant-research-harness">quant-research-harness</a></h3>
+      <p>Backtesting harness for long-only cross-sectional equity strategies, with point-in-time data discipline, explicit transaction and tax costs, and a ten-module indicator inventory. 51 tests, including one that asserts directly that the engine cannot see the future.</p>
+    </li>
+    <li>
+      <h3><a href="https://github.com/DWuuuuuu/investment-research-engine">investment-research-engine</a></h3>
+      <p>A research terminal for US and A-share equities and public prediction markets: cross-market screening, valuation, and macro and policy-path state in one workflow. 47 modules, 258 tests, running offline with no credentials.</p>
+    </li>
+    <li>
+      <h3><a href="https://github.com/WGLab/GestaltMML">GestaltMML</a></h3>
+      <p>Multimodal rare disease diagnosis from facial images and clinical text. The published model and evaluation code. Wang Lab, CHOP.</p>
+    </li>
+    <li>
+      <h3><a href="https://github.com/WGLab/MINT-LLM">MINT-LLM</a></h3>
+      <p>Transfers multimodal knowledge into language models through odds-ratio preference optimization. Published in <i>Patterns</i>, spotlight at the ICML 2025 GenBio Workshop. Wang Lab, CHOP.</p>
+    </li>
+    <li>
+      <h3><a href="https://github.com/WGLab/PhenoGPT">PhenoGPT</a></h3>
+      <p>Phenotype recognition in clinical notes with language models, covering both an encoder approach and a generative one. Wang Lab, CHOP.</p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Publications</h2>
+  <p class="byline">Published as Da Wu.</p>
+
+  <h3 class="group">Causal inference and econometric methods</h3>
+  <ol class="pubs">
+    <li><span class="pt">Three-sided Testing with Two Control Groups with an Application to an Observational Study of the Impact of High School Football Participation on Subsequent Cognitive Functioning.</span> Wu, D., Horng, I., Deshpande, S., Small, D. <span class="venue">Preprint.</span></li>
+    <li><span class="pt">Estimating Value Creation in Commercial Real Estate from Green Certification.</span> Calomiris, C.W. and Wu, J. <span class="venue">Mina Analytics working paper, 2025. Available on request.</span></li>
+  </ol>
+
+  <h3 class="group">Machine learning and language models</h3>
+  <ol class="pubs">
+    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2026.101544">Multimodal integrated knowledge transfer to large language models through preference optimization with biomedical applications.</a></span> Wang, Z., Wu, D., Nguyen, Q.M., Xu, Z., Wang, K. <span class="venue">Patterns 7(8), 101544, 2026. Spotlight, ICML 2025 GenBio Workshop.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2024.101030">Exploring the reversal curse and other deductive logical reasoning in BERT and GPT-based large language models.</a></span> Wu, D., Yang, J., Wang, K. <span class="venue">Patterns 5(9), 101030, 2024.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2023.100860">Classification of integers based on residue classes via modern deep learning algorithms.</a></span> Wu, D., Yang, J., Ahsan, M.U., Wang, K. <span class="venue">Patterns 4(12), 2023.</span></li>
+    <li><span class="pt"><a href="https://arxiv.org/abs/2312.15320">GestaltMML: enhancing rare genetic disease diagnosis through multimodal machine learning combining facial images and clinical texts.</a></span> Wu, D. et al. <span class="venue">arXiv:2312.15320, 2024.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2023.100887">Enhancing phenotype recognition in clinical notes using large language models: PhenoBCBERT and PhenoGPT.</a></span> Yang, J., Liu, C., Deng, W., Wu, D., Weng, C., Zhou, Y., Wang, K. <span class="venue">Patterns 5(1), 2024.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.1038/s41746-026-02733-z">Interpretable fine-tuned large language models facilitate making genetic test decisions for rare diseases.</a></span> Nguyen, Q.M., Chen, F., Liu, C., Campbell, I.M., Zhang, G., Wu, D. et al. <span class="venue">npj Digital Medicine, 2026.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.1002/mdb2.70033">Integrating Chain-of-Thought and Retrieval Augmented Generation Enhances Rare Disease Diagnosis from Clinical Notes.</a></span> Wang, Z., Wu, D., Nguyen, Q., Wang, K. <span class="venue">Medicine Bulletin 2(2), 167–183, 2026.</span></li>
+  </ol>
+
+  <h3 class="group">Probability theory and mathematical statistics</h3>
+  <ol class="pubs">
+    <li><span class="pt"><a href="https://doi.org/10.30757/alea.v20-51">On Properties of Random Binary Contingency Tables with Non-Uniform Margin.</a></span> Wu, D. <span class="venue">ALEA, Latin American Journal of Probability and Mathematical Statistics 20, 1367–1383, 2023.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.1007/s10959-022-01234-5">Asymptotic Properties of Random Contingency Tables with Uniform Margin.</a></span> Wu, D. <span class="venue">Journal of Theoretical Probability 36, 2066–2092, 2023.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.47443/cm.2023.037">Asymptotic Enumeration of Binary Contingency Tables and Comparison with Independence Heuristic.</a></span> Wu, D. <span class="venue">Contributions to Mathematics 8, 16–23, 2023.</span></li>
+    <li><span class="pt"><a href="https://arxiv.org/abs/2302.13992">The SLE Bubble Measure via Conformal Welding of Quantum Surfaces.</a></span> Wu, D. <span class="venue">arXiv:2302.13992, 2023. Part of the <a href="https://www.proquest.com/openview/acb2cfdb513656eef041118e019f2f57/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">PhD thesis</a>.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Service</h2>
+  <p>Peer reviewer for NeurIPS, ICML, ICLR, PNAS, the Journal of Biomedical Informatics, and Artificial Intelligence in Medicine.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email is the fastest route: <a href="mailto:jeremywu12345@gmail.com">jeremywu12345@gmail.com</a>.</p>
+  <p class="contact-list">
+    <a href="https://www.linkedin.com/in/jeremydwu">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=RGvMvRIAAAAJ&amp;hl=en">Google Scholar</a>
+    <a href="https://github.com/DWuuuuuu">GitHub</a>
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>Jeremy D. Wu</p>
+</footer>
+</body>
+</html>
