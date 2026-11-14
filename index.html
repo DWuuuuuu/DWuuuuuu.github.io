@@ -25,7 +25,7 @@
 <main id="main">
 
 <section class="intro">
-  <p>I am a mathematician by training. My PhD is in probability theory at the University of Pennsylvania, with a master's in statistics from Wharton taken alongside it. Since then I have published across three areas: causal inference and econometric methods, machine learning and language models, and probability theory. I also build the data pipelines and test harnesses that work of that kind needs.</p>
+  <p>I am a mathematician by training. My PhD is in probability theory at the University of Pennsylvania, with a master's in statistics from Wharton taken alongside it. My published work runs across four fields that are usually four different people: causal inference, econometrics and quantitative research, machine learning and the evaluation of language models, and probability theory. I also build the data pipelines and test harnesses that work of that kind needs.</p>
   <p>I believe the next real advances in scientific research and in industry will come from people and AI working together. That is how I work day to day. Claude Code and Codex are my primary development workflow, for research code, data pipelines and test suites. Verification is the part I own. I write property-based tests rather than output snapshots.</p>
   <p>I want to put rigorous quantitative training to work on the societal side of AI, measuring what these systems do to the economy and to the people using them. I work at the intersection of AI and quantitative analysis and want to keep building there.</p>
 </section>
@@ -55,11 +55,13 @@
       <p class="title">Head of Quantitative Research</p>
       <ul class="what-list">
         <li>Co-authored the Real Estate Model with Chief Economist Charles W. Calomiris and estimated the causal revenue effect of green building certification.</li>
-        <li>Premia of 8.3% for LEED in California and above 7% for Energy Star in California and Florida, with individual properties where certification implied up to $780K in additional annual lease revenue.</li>
-        <li>The estimates come from more than 36,000 building-year observations across 1,322 zip codes, drawn from a proprietary 10-terabyte database built over two years from 10,000 source datasets.</li>
-        <li>Built the AI and NLP measurement layer, engineering features out of noisy unstructured text. GPT-4o with targeted prompt engineering reached near-100% accuracy extracting structured attributes from building descriptions, alongside LDA topic weights and textual sentiment measures.</li>
-        <li>Ran forward selection over 4,900 locational and 100 building-level candidate controls and their interactions, guarded by 9-fold cross-validation on the baseline and 100 cross-validation trials on the treatment model.</li>
-        <li>Separated real effects from spurious fit by cross-checking estimator families that fail differently, putting parametric regression against propensity-score matching and tree-based ensembles, with placebo tests and sensitivity analysis.</li>
+        <li>The premium is a surface over location and time, and the model estimates it at that resolution. LEED at 8.3% in California and 3.9% in Florida, Energy Star at 7.7% and 7.3%. A single coefficient with no interactions returns 6.1% and 5.9% for LEED, understating one state and overstating the other at the same time.</li>
+        <li>It resolves to single buildings. Two uncertified towers in one downtown Los Angeles zip code: certifying the first is worth 12% more lease revenue per square foot, about $780K a year, and certifying the second is worth nothing.</li>
+        <li>Identification fits the full baseline with no certification term in it, then adds certification and its interactions. Certification is positively selected, so conditioning on the whole baseline first makes the estimate deliberately conservative. A model without building age attributes new construction to green, which is the error published elsewhere in the industry.</li>
+        <li>Ruled out cost pass-through as the mechanism. If landlords were recovering energy savings, lease type would order the effect. The triple-net interaction comes in at 0.30 against 0.39 where the tenant pays nothing, which is backwards, and lease type is not selected at all in Florida.</li>
+        <li>The estimates come from more than 36,000 building-year observations across 1,322 zip codes in California and Florida, drawn from a proprietary 10-terabyte database built over two years from 10,000 source datasets.</li>
+        <li>Built the AI and NLP measurement layer, engineering features out of noisy unstructured text. GPT-4o with targeted prompt engineering reached near-100% accuracy extracting structured attributes from broker descriptions, validated against hand-coded text, alongside LDA topic weights that a hedonic model can read as finish quality or accessibility.</li>
+        <li>Ran forward selection over 4,900 locational and 100 building-level candidates on incremental R-squared and then significance at 1%, with 9-fold cross-validation and percentile trimming. Final baselines of 881 variables in California and 709 in Florida, adjusted R-squared 0.713 and 0.615.</li>
         <li>Presented findings to institutional investors and to the U.S. Securities and Exchange Commission. Supervised junior researchers across data engineering, feature construction and pipeline development.</li>
       </ul>
     </li>
@@ -129,7 +131,7 @@
   <ul class="work">
     <li>
       <h3><a href="https://epi-gram.app">Epigram</a></h3>
-      <p>A mathematics learning platform, live in production. Quantitative interview problems, each with multiple verified solution paths and labelled by difficulty, topic and reasoning type.</p>
+      <p>A quantitative finance interview preparation platform, live in production. Problems of the kind quant interviews actually ask, each with multiple verified solution paths and labelled by difficulty, topic, reasoning type and source company.</p>
     </li>
     <li>
       <h3><a href="https://github.com/DWuuuuuu/quant-research-harness">quant-research-harness</a></h3>
@@ -141,39 +143,47 @@
     </li>
     <li>
       <h3><a href="https://github.com/WGLab/GestaltMML">GestaltMML</a></h3>
-      <p>Multimodal rare disease diagnosis from facial images and clinical text. The published model and evaluation code. Wang Lab, CHOP.</p>
+      <p>Multimodal rare disease diagnosis from facial images and clinical text. The published model and evaluation code. I am the only contributor to the repository. Wang Lab, CHOP.</p>
     </li>
     <li>
       <h3><a href="https://github.com/WGLab/MINT-LLM">MINT-LLM</a></h3>
       <p>Transfers multimodal knowledge into language models through odds-ratio preference optimization. Published in <i>Patterns</i>, spotlight at the ICML 2025 GenBio Workshop. Wang Lab, CHOP.</p>
     </li>
     <li>
+      <h3><a href="https://github.com/WGLab/CoT-RAG-LLM-Gene-Prioritization-Disease-Diagnosis">CoT-RAG gene prioritization</a></h3>
+      <p>Chain-of-thought prompting with retrieval-augmented generation for rare disease diagnosis. Five inference methods, FAISS retrieval over biomedical embeddings, reranking, and an automated evaluator. Wang Lab, CHOP.</p>
+    </li>
+    <li>
       <h3><a href="https://github.com/WGLab/PhenoGPT">PhenoGPT</a></h3>
-      <p>Phenotype recognition in clinical notes with language models, covering both an encoder approach and a generative one. Wang Lab, CHOP.</p>
+      <p>Phenotype recognition in clinical notes with language models, covering both an encoder approach and a generative one. The most used of these repositories. Wang Lab, CHOP.</p>
     </li>
   </ul>
 </section>
 
 <section>
   <h2>Publications</h2>
-  <p class="byline">Published as Da Wu.</p>
+  <p class="byline">Published as Da Wu. † marks joint first authorship.</p>
 
-  <h3 class="group">Causal inference and econometric methods</h3>
+  <h3 class="group">Causal inference</h3>
   <ol class="pubs">
-    <li><span class="pt">Three-sided Testing with Two Control Groups with an Application to an Observational Study of the Impact of High School Football Participation on Subsequent Cognitive Functioning.</span> Wu, D., Horng, I., Deshpande, S., Small, D. <span class="venue">Preprint.</span></li>
-    <li><span class="pt">Estimating Value Creation in Commercial Real Estate from Green Certification.</span> Calomiris, C.W. and Wu, J. <span class="venue">Mina Analytics working paper, 2025. Available on request.</span></li>
+    <li><span class="pt">Three-sided Testing with Two Control Groups with an Application to an Observational Study of the Impact of High School Football Participation on Subsequent Cognitive Functioning.</span> Wu, D.†, Horng, I.†, Deshpande, S., Small, D. <span class="venue">Preprint.</span></li>
     <li><span class="pt"><a href="https://doi.org/10.1002/aur.70378">Characterizing Autism Phenotype Onset in the Electronic Health Records to Enable Age-Specific Screening.</a></span> Chen, F., Kneifati-Hayek, J., Zelin, C., Wu, D. et al. <span class="venue">Autism Research, 2026.</span></li>
   </ol>
 
-  <h3 class="group">Machine learning and language models</h3>
+  <h3 class="group">Econometrics and quantitative research</h3>
   <ol class="pubs">
-    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2026.101544">Multimodal integrated knowledge transfer to large language models through preference optimization with biomedical applications.</a></span> Wang, Z., Wu, D., Nguyen, Q.M., Xu, Z., Wang, K. <span class="venue">Patterns 7(8), 101544, 2026. Spotlight, ICML 2025 GenBio Workshop.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2024.101030">Exploring the reversal curse and other deductive logical reasoning in BERT and GPT-based large language models.</a></span> Wu, D., Yang, J., Wang, K. <span class="venue">Patterns 5(9), 101030, 2024.</span></li>
+    <li><span class="pt">Estimating Value Creation in Commercial Real Estate from Green Certification.</span> Calomiris, C.W. and Wu, J. <span class="venue">Mina Analytics working paper, 2025. Available on request.</span></li>
+  </ol>
+
+  <h3 class="group">Machine learning, language models and evaluation</h3>
+  <ol class="pubs">
+    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2026.101544">Multimodal integrated knowledge transfer to large language models through preference optimization with biomedical applications.</a></span> Wang, Z.†, Wu, D.†, Nguyen, Q.M., Xu, Z., Wang, K. <span class="venue">Patterns 7(8), 101544, 2026. Spotlight, ICML 2025 GenBio Workshop.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2024.101030">Exploring the reversal curse and other deductive logical reasoning in BERT and GPT-based large language models.</a></span> Wu, D.†, Yang, J.†, Wang, K. <span class="venue">Patterns 5(9), 101030, 2024.</span></li>
     <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2023.100860">Classification of integers based on residue classes via modern deep learning algorithms.</a></span> Wu, D., Yang, J., Ahsan, M.U., Wang, K. <span class="venue">Patterns 4(12), 2023.</span></li>
     <li><span class="pt"><a href="https://arxiv.org/abs/2312.15320">GestaltMML: enhancing rare genetic disease diagnosis through multimodal machine learning combining facial images and clinical text.</a></span> Wu, D., Wang, Z., Chen, H. et al. <span class="venue">2026 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), accepted.</span></li>
     <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2023.100887">Enhancing phenotype recognition in clinical notes using large language models: PhenoBCBERT and PhenoGPT.</a></span> Yang, J., Liu, C., Deng, W., Wu, D., Weng, C., Zhou, Y., Wang, K. <span class="venue">Patterns 5(1), 2024.</span></li>
     <li><span class="pt"><a href="https://doi.org/10.1038/s41746-026-02733-z">Interpretable fine-tuned large language models facilitate making genetic test decisions for rare diseases.</a></span> Nguyen, Q.M., Chen, F., Liu, C., Campbell, I.M., Zhang, G., Wu, D. et al. <span class="venue">npj Digital Medicine, 2026.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1002/mdb2.70033">Integrating Chain-of-Thought and Retrieval Augmented Generation Enhances Rare Disease Diagnosis from Clinical Notes.</a></span> Wang, Z., Wu, D., Nguyen, Q., Wang, K. <span class="venue">Medicine Bulletin 2(2), 167–183, 2026.</span></li>
+    <li><span class="pt"><a href="https://doi.org/10.1002/mdb2.70033">Integrating Chain-of-Thought and Retrieval Augmented Generation Enhances Rare Disease Diagnosis from Clinical Notes.</a></span> Wang, Z.†, Wu, D.†, Nguyen, Q., Wang, K. <span class="venue">Medicine Bulletin 2(2), 167–183, 2026.</span></li>
   </ol>
 
   <h3 class="group">Probability theory and mathematical statistics</h3>
