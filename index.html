@@ -6,8 +6,8 @@
     <title>Work · Jeremy D. Wu</title>
     <meta content="Jeremy D. Wu’s portfolio of AI, econometrics and quantitative research." name="description"/>
     <link href="favicon.svg" rel="icon"/>
-    <link href="styles.css" rel="stylesheet"/>
-    <script src="project-demos.js" defer></script>
+    <link href="styles.css?v=portfolio-2" rel="stylesheet"/>
+    <script src="project-demos.js?v=portfolio-2" defer></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -25,7 +25,8 @@
         <div class="intro-copy">
           <h1>I want AI to make a measurable difference <em>in people’s lives.</em></h1>
           <p>I’m Jeremy Wu, a mathematician by training. I want to build AI that helps people reason through hard problems and make decisions when the evidence is incomplete. My work draws on probability, statistics, econometrics, and machine learning.</p>
-          <p>I’m looking for an applied research role where I can build models, design experiments, and work with the people who use the results. <a href="about.html">More about me</a></p>
+          <p>I’m looking for an applied research role where I can build models, design experiments, and work with the people who use the results.</p>
+          <nav class="intro-links" aria-label="Explore the portfolio"><a href="#work">Explore projects ↓</a><a href="#interests-title">Career interests</a></nav>
         </div>
         <figure class="walk-print">
           <fieldset>
@@ -38,35 +39,23 @@
             <div class="panel panel0"><img src="assets/random-walk-ensemble.webp" data-animation="assets/random-walk-ensemble.gif" width="1160" height="830" alt="Twenty-four simulated paths spread across a lattice from the same open circle. One path is traced in dark green."/></div>
             <div class="panel panel1"><img src="assets/random-walk-single.webp" data-animation="assets/random-walk-single.gif" width="1160" height="830" alt="The dark green path in isolation, from the open circle to the solid endpoint."/></div>
           </fieldset>
-          <figcaption>Each path starts at the open circle and takes 128 steps, choosing among four directions with equal probability.</figcaption>
+          <figcaption>128 steps from the same starting point, with four equally likely directions at every step.</figcaption>
         </figure>
-        <nav class="topic-jumps" aria-label="Explore projects by topic">
-          <a href="#interview-prep">Interview Prep ↓</a>
-          <a href="#ai-llm">AI/LLM ↓</a>
-          <a href="#quant-finance">Quant Finance ↓</a>
-        </nav>
-      </section>
-      <section class="research-interests" aria-labelledby="interests-title">
-        <h2 id="interests-title">Career interests</h2>
-        <dl>
-          <dt>Causal inference and AI economics</dt>
-          <dd>When a team adopts AI, whose work gets easier, and does the quality improve? I’d like to design experiments that answer those questions and help teams decide whether to expand a rollout.</dd>
-          <dt>Clinical foundation models</dt>
-          <dd>At Children’s Hospital of Philadelphia, I developed <a href="#gestaltmml">GestaltMML</a> and worked on <a href="#phenogpt">PhenoGPT</a> and <a href="#mint-llm">MINT-LLM</a>. I’d like to build models that read images alongside a patient’s history, track changes between visits, and learn from findings clinicians catch.</dd>
-          <dt>Frontier evaluation and post-training</dt>
-          <dd>Our <a href="publications.html#reversal-curse">reversal-curse study</a> examined why a model can learn a fact in one direction and miss it in reverse. I want to build tests that expose gaps like this and use the results to guide training and release decisions.</dd>
-          <dt>Math AI and formal verification</dt>
-          <dd>I’m interested in how AI can help mathematicians explore ideas and check proofs. I’d like to turn mathematical claims into statements a proof assistant can verify, then use its feedback to train models to construct better arguments.</dd>
-          <dt>Quantitative finance</dt>
-          <dd>At <a href="mina.html">Mina Analytics</a>, I led research on green alpha in real assets. We estimated how much additional rent a green certification might bring to a particular office building, giving owners a way to weigh that premium against the cost.</dd>
-        </dl>
+
       </section>
       <div id="work">
+        <header class="work-heading"><h2>Selected projects</h2>
+          <nav class="topic-jumps" aria-label="Explore projects by topic">
+          <a href="#interview-prep">Interview Prep</a>
+          <a href="#ai-llm">AI/LLM</a>
+          <a href="#quant-finance">Quant Finance</a>
+        </nav>
+        </header>
         <section class="work-group" aria-labelledby="interview-prep">
-          <h2 id="interview-prep">Interview Prep</h2>
+          <h3 id="interview-prep">Interview Prep</h3>
           <article class="feature">
             <div>
-              <h3>Epigram</h3>
+              <h4>Epigram</h4>
               <p>I built Epigram around the harder questions candidates encounter at quant firms. Pick a firm, work through a recent interview problem, then compare your reasoning with solutions I’ve checked by hand.</p>
               <a class="button" href="epigram.html">Try a problem <span>→</span></a>
             </div>
@@ -84,13 +73,14 @@
           </article>
         </section>
         <section class="work-group" aria-labelledby="ai-llm">
-          <h2 id="ai-llm">AI/LLM</h2>
+          <h3 id="ai-llm">AI/LLM</h3>
           <div class="cards">
             <article id="gestaltmml" class="card clinical">
               <small>Multimodal AI</small>
-              <h3>GestaltMML</h3>
-              <p>At Children’s Hospital of Philadelphia, I developed GestaltMML to narrow the search for a rare genetic diagnosis. To our knowledge, it was the first convolution-free transformer to jointly encode facial photos, demographics, and clinical descriptions for this task. We tested it across 528 disorders.</p>
+              <h4>GestaltMML</h4>
               <figure class="paper-plate"><a href="assets/gestalt-architecture.webp" aria-label="Enlarge the figure"><img src="assets/gestalt-architecture.webp" width="1600" height="710" loading="lazy" alt="Image patches and clinical text enter a shared transformer encoder. A classification head ranks candidate syndromes."/></a><figcaption>Image patches and clinical words enter the same encoder, so the model can learn relationships between them. <a href="https://arxiv.org/html/2312.15320v3#S3.F1">Wu et al., Fig. 1C</a> · Photo inputs omitted.</figcaption></figure>
+              <p>At Children’s Hospital of Philadelphia, I built a transformer that combines facial photos, demographics, and clinical notes to rank possible diagnoses. We tested it across 528 rare disorders.</p>
+              <details class="study-details"><summary>Compare benchmark results</summary>
               <fieldset>
                 <legend>Correct diagnosis ranked first, by benchmark split</legend>
                 <input checked="" class="opt opt0" id="split0" name="split" type="radio"/>
@@ -130,20 +120,21 @@
                   </div>
                 </div>
               </fieldset>
+              </details>
               <a href="https://arxiv.org/html/2312.15320">Read the benchmark ↗</a>
             </article>
             <article class="card study-card">
               <small>Clinical language models</small>
-              <h3 id="phenogpt">PhenoGPT</h3>
-              <p>A clinician can describe the same finding a dozen ways. We developed PhenoGPT to extract those findings from free text and link them to the Human Phenotype Ontology. Alongside our encoder, PhenoBCBERT, it surfaced descriptions that existing tools missed, including candidate terms beyond the ontology’s vocabulary.</p>
+              <h4 id="phenogpt">PhenoGPT</h4>
               <figure class="paper-plate"><a href="assets/phenogpt-training.webp" aria-label="Enlarge the figure"><img src="assets/phenogpt-training.webp" width="1500" height="488" loading="lazy" alt="Published diagram showing GPT pretraining followed by supervised fine-tuning to generate phenotype mentions and ontology identifiers."/></a><figcaption>How GPT learns to turn a sentence into a phenotype mention and its identifier. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10801236/#fig2">Yang et al., Fig. 2C</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption></figure>
+              <p>Clinicians can describe the same finding in many ways. We built PhenoGPT to recognize those descriptions in free text and link them to the Human Phenotype Ontology.</p>
               <div class="cot-links"><a href="https://doi.org/10.1016/j.patter.2023.100887">Read the paper ↗</a><a href="https://github.com/WGLab/PhenoGPT">View code ↗</a></div>
             </article>
             <article class="card study-card">
               <small>Clinical model post-training</small>
-              <h3 id="mint-llm">MINT-LLM</h3>
-              <p>Can a model learn from patient images during training and still work when only a written note is available? We developed MINT to transfer that knowledge. A multimodal teacher ranks diagnoses using both the image and the note. Its rankings teach a smaller language model which answers to favor from text alone.</p>
+              <h4 id="mint-llm">MINT-LLM</h4>
               <figure class="paper-plate"><a href="assets/mint-framework.webp" aria-label="Enlarge the figure"><img src="assets/mint-teacher.webp" width="1350" height="472" loading="lazy" alt="The teacher encodes text and images, ranks predictions, and turns high- and low-ranked candidates into paired responses."/></a><figcaption>The teacher creates a preference dataset from its rankings. <a href="assets/mint-framework.webp">See all four training pipelines</a> · <a href="https://doi.org/10.1016/j.patter.2026.101544">Wang et al., Fig. 1</a>.</figcaption></figure>
+              <p>We trained a text-only model to benefit from medical images. A teacher sees both the image and the clinical note, then ranks diagnoses so the smaller model can learn which answers to favor.</p>
               <details class="loss-note"><summary>Explore the training loss</summary>
                 <p class="equation" aria-label="ORPO loss equals the expected supervised loss plus lambda times the odds ratio loss">ℒ<sub>ORPO</sub> = 𝔼[ℒ<sub>SFT</sub> + λ ℒ<sub>OR</sub>]</p>
                 <p class="equation" aria-label="Odds ratio loss equals negative log sigmoid of the log odds of the preferred answer minus the log odds of the rejected answer">ℒ<sub>OR</sub> = −log σ(log odds<sub>preferred</sub> − log odds<sub>rejected</sub>)</p>
@@ -153,38 +144,31 @@
             </article>
             <article id="cot-rag" class="card study-card">
               <small>Rare disease research</small>
-              <h3>CoT-RAG</h3>
-              <p>We studied how large language models reason through a rare-disease case. CoT-RAG combines chain-of-thought prompting with a search of biomedical references to rank candidate diseases and genes. On noisy hospital notes, identifying the clinical clues before searching helped the model find more relevant evidence.</p>
-              <fieldset class="cot-exhibit">
-                <legend>Explore the study</legend>
-                <input class="opt opt0" id="cot-results" name="cot-view" type="radio"/>
-                <label for="cot-results">Gene rankings</label>
-                <input checked class="opt opt1" id="cot-methods" name="cot-view" type="radio"/>
-                <label for="cot-methods">Workflows</label>
-                <figure class="panel panel0">
+              <h4>CoT-RAG</h4>
+              <figure class="paper-plate">
+                  <a href="assets/cot-rag-workflows.webp" aria-label="Enlarge the four workflow diagrams from Figure 1"><img loading="lazy" width="2000" height="1143" src="assets/cot-rag-workflows.webp" alt="Four workflows compare reasoning alone, retrieval alone, and two ways to combine them. Retrieval can use the raw note or the clinical features identified by the model."/></a>
+                  <figcaption>Four ways to combine retrieval and reasoning. <a href="assets/cot-rag-workflows.webp">Enlarge Figure 1</a> · <a href="https://arxiv.org/pdf/2503.12286v2#page=26">Wang et al.</a></figcaption>
+                </figure>
+              <p>We tested when a language model should look up evidence as it reasons through a rare-disease case. On noisy hospital notes, identifying clinical clues before searching led to more relevant evidence.</p>
+              <details class="study-details cot-exhibit"><summary>Compare gene rankings</summary><figure>
                   <figcaption><strong>How often was the correct gene in the top 10?</strong>DeepSeek-R1-Distill-Llama-70B on notes derived from Phenopackets, structured records of rare disease cases.</figcaption>
                   <div class="barline"><span>Direct answer</span><b>11.72%</b><div class="track"><div style="width:11.72%"></div></div></div>
                   <div class="barline"><span>Reasoning alone</span><b>41.18%</b><div class="track"><div style="width:41.18%"></div></div></div>
                   <div class="barline"><span>Retrieve, then reason</span><b>42.13%</b><div class="track"><div style="width:42.13%"></div></div></div>
                   <div class="barline"><span>Reason, then retrieve</span><b>41.54%</b><div class="track"><div style="width:41.54%"></div></div></div>
                   <small>Selected comparisons from Fig. 2, Wang et al. (2026)</small>
-                </figure>
-                <figure class="panel panel1">
-                  <a href="assets/cot-rag-workflows.webp" aria-label="Enlarge the four workflow diagrams from Figure 1"><img loading="lazy" width="2000" height="1143" src="assets/cot-rag-workflows.webp" alt="Four workflows compare reasoning alone, retrieval alone, and two ways to combine them. Retrieval can use the raw note or the clinical features identified by the model."/></a>
-                  <figcaption><strong>What goes into the search?</strong>The two lower panels show how changing the order changes the query. <a href="assets/cot-rag-workflows.webp">Enlarge Figure 1</a> · <a href="https://arxiv.org/pdf/2503.12286v2#page=26">Wang et al.</a></figcaption>
-                </figure>
-              </fieldset>
+                </figure></details>
               <div class="cot-links"><a href="https://doi.org/10.1002/mdb2.70033">Read the paper ↗</a><a href="https://github.com/WGLab/CoT-RAG-LLM-Gene-Prioritization-Disease-Diagnosis">View code ↗</a></div>
             </article>
           </div>
         </section>
         <section class="work-group" aria-labelledby="quant-finance">
-          <h2 id="quant-finance">Quant Finance</h2>
+          <h3 id="quant-finance">Quant Finance</h3>
           <article class="feature mina-feature">
             <div>
               <small>Commercial real estate · Mina Analytics</small>
-              <h3>Measuring green alpha</h3>
-              <p>Where does a greener office building earn more rent, and is the premium large enough to justify certification? At Mina Analytics, I led the quantitative work behind our Real Estate Model. Charles Calomiris and I estimated how the lease-revenue premium for LEED and Energy Star varies from one property to the next, giving owners a way to weigh an upgrade against its cost.</p>
+              <h4>Measuring green alpha</h4>
+              <p>At Mina Analytics, I led research on what green certification is worth to an office building. Charles Calomiris and I estimated how lease premiums vary by property, giving owners a way to weigh an upgrade against its cost.</p>
               <a class="button" href="mina.html">Explore the model <span aria-hidden="true">→</span></a>
               <a class="working-link" href="publications.html#econometrics">November 2025 working paper →</a>
             </div>
@@ -199,7 +183,7 @@
             <template id="archived-quant-harness">
             <article class="card quant">
               <small>Systematic research</small>
-              <h3>Quant research harness</h3>
+              <h4>Quant research harness</h4>
               <p>A weekly reversal strategy looks profitable on a seeded synthetic dataset. Switch on modeled A-share trading costs to see why I rejected it.</p>
               <fieldset>
                 <legend>Trading costs</legend>
@@ -223,8 +207,8 @@
             </template>
             <article id="investment-engine" class="feature engine-feature">
               <div><small>Investment research tools</small>
-              <h3>Investment research engine</h3>
-              <p>I built this terminal to make an investment thesis possible to revisit. I can screen US and Chinese equities, change the weights behind a ranking, and compare the idea with signals from prediction markets. Recording a candidate preserves both my reasoning and the data I had that day.</p>
+              <h4>Investment research engine</h4>
+              <p>I built a terminal to screen US and Chinese equities and compare investment ideas with macro and prediction-market signals. Each saved idea keeps my reasoning alongside the data I had that day.</p>
               <a class="button" href="https://github.com/DWuuuuuu/investment-research-engine">Explore the code ↗</a></div>
               <fieldset class="terminal-gallery"><legend>Inside the terminal · illustrative examples</legend>
                 <input checked class="opt opt0" name="terminal" id="engine-us" type="radio"/><label for="engine-us">US equities</label>
@@ -256,6 +240,21 @@
           </div>
         </section>
       </div>
+      <section class="research-interests" aria-labelledby="interests-title">
+        <h2 id="interests-title">Career interests</h2>
+        <dl>
+          <dt>Causal inference and AI economics</dt>
+          <dd>When a team adopts AI, whose work gets easier, and does the quality improve? I’d like to design experiments that answer those questions and help teams decide whether to expand a rollout.</dd>
+          <dt>Clinical foundation models</dt>
+          <dd>At Children’s Hospital of Philadelphia, I developed <a href="#gestaltmml">GestaltMML</a> and worked on <a href="#phenogpt">PhenoGPT</a> and <a href="#mint-llm">MINT-LLM</a>. I’d like to build models that read images alongside a patient’s history, track changes between visits, and learn from findings clinicians catch.</dd>
+          <dt>Frontier evaluation and post-training</dt>
+          <dd>Our <a href="publications.html#reversal-curse">reversal-curse study</a> examined why a model can learn a fact in one direction and miss it in reverse. I want to build tests that expose gaps like this and use the results to guide training and release decisions.</dd>
+          <dt>Math AI and formal verification</dt>
+          <dd>I’m interested in how AI can help mathematicians explore ideas and check proofs. I’d like to turn mathematical claims into statements a proof assistant can verify, then use its feedback to train models to construct better arguments.</dd>
+          <dt>Quantitative finance</dt>
+          <dd>At <a href="mina.html">Mina Analytics</a>, I led research on green alpha in real assets. We estimated how much additional rent a green certification might bring to a particular office building, giving owners a way to weigh that premium against the cost.</dd>
+        </dl>
+      </section>
       <section class="endlink">
         <h2>Publications</h2>
         <p>Journal articles, conference work and manuscripts across four research areas.</p>
@@ -265,6 +264,7 @@
     <dialog class="tour-dialog" aria-labelledby="tour-title">
       <header><h2 id="tour-title">Walkthrough</h2><form method="dialog"><button type="submit" autofocus>Close</button></form></header>
       <img alt=""/>
+      <a class="original-media">Open full-size file ↗</a>
     </dialog>
     <footer>
       <strong>Jeremy D. Wu</strong>

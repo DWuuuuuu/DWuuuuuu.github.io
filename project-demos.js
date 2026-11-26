@@ -4,7 +4,7 @@ const walk = document.querySelector('.walk-print');
 const motionButton = walk.querySelector('.motion-switch');
 const paths = Array.from(walk.querySelectorAll('img[data-animation]'));
 const stills = paths.map(image => image.getAttribute('src'));
-let animate = !motionPreference.matches;
+let animate = false;
 
 function renderWalk() {
   const selected = walk.querySelector('#many-walks').checked ? 0 : 1;
@@ -22,20 +22,19 @@ motionButton.addEventListener('click', () => {
 });
 walk.addEventListener('change', renderWalk);
 motionPreference.addEventListener('change', () => {
-  animate = !motionPreference.matches;
+  if (motionPreference.matches) animate = false;
   renderWalk();
 });
 renderWalk();
 
 const video = document.querySelector('.epigram-demos video');
 const demoLinks = document.querySelectorAll('.demo-picker a');
-let previewStarted = false;
+
 
 for (const link of demoLinks) {
   link.addEventListener('click', event => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    previewStarted = true;
     if (video.src !== link.href) {
       for (const item of demoLinks) item.removeAttribute('aria-current');
       link.setAttribute('aria-current', 'true');
@@ -46,32 +45,31 @@ for (const link of demoLinks) {
     video.play().catch(() => {}); // Native controls remain available when autoplay is blocked.
   });
 }
-video.addEventListener('play', () => { previewStarted = true; });
 motionPreference.addEventListener('change', () => {
   if (motionPreference.matches) video.pause();
 });
 if ('IntersectionObserver' in window) {
   new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) {
-      video.pause();
-    } else if (entry.intersectionRatio >= 0.6 && !previewStarted && !motionPreference.matches) {
-      previewStarted = true;
-      video.play().catch(() => {});
-    }
-  }, {threshold: [0, 0.6]}).observe(video);
+    if (!entry.isIntersecting) video.pause();
+  }).observe(video);
 }
 
 const tourDialog = document.querySelector('.tour-dialog');
 if (tourDialog && typeof tourDialog.showModal === 'function') {
   const tourImage = tourDialog.querySelector('img');
   const tourTitle = tourDialog.querySelector('h2');
-  for (const link of document.querySelectorAll('a[data-tour]')) {
+  const original = tourDialog.querySelector('.original-media');
+  const mediaLinks = document.querySelectorAll('a[data-tour], #work figure a[href$=".webp"]');
+  for (const link of mediaLinks) {
     link.addEventListener('click', event => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
-      tourTitle.textContent = link.dataset.tour;
+      const preview = link.closest('figure')?.querySelector('img');
+      const projectTitle = link.closest('article')?.querySelector('h4')?.textContent;
+      tourTitle.textContent = link.dataset.tour || projectTitle || 'Project figure';
+      original.href = link.href;
       tourImage.src = link.href;
-      tourImage.alt = link.dataset.tour;
+      tourImage.alt = link.dataset.tour || preview?.alt || tourTitle.textContent;
       tourDialog.showModal();
     });
   }
