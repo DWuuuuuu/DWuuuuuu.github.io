@@ -58,6 +58,7 @@
               <h4>Epigram</h4>
               <p>I built Epigram around the harder questions candidates encounter at quant firms. Pick a firm, work through a recent interview problem, then compare your reasoning with solutions I’ve checked by hand.</p>
               <a class="button" href="epigram.html">Try a problem <span>→</span></a>
+              <a class="working-link" href="https://github.com/chkim15/epigram">GitHub ↗</a>
             </div>
             <figure class="epigram-demos">
               <video controls playsinline muted loop preload="none" width="1280" height="800" poster="assets/epigram/problems.webp" src="assets/epigram/problems.mp4" aria-label="Epigram problem library walkthrough"></video>
@@ -121,14 +122,14 @@
                 </div>
               </fieldset>
               </details>
-              <a href="https://arxiv.org/html/2312.15320">Read the benchmark ↗</a>
+              <div class="cot-links"><a href="https://arxiv.org/html/2312.15320">Read the benchmark ↗</a><a href="https://github.com/WGLab/GestaltMML">GitHub ↗</a></div>
             </article>
             <article class="card study-card">
               <small>A transformer decoder for clinical phenotype extraction</small>
               <h4 id="phenogpt">PhenoGPT</h4>
               <figure class="paper-plate"><a href="assets/phenogpt-training.webp" aria-label="Enlarge the figure"><img src="assets/phenogpt-training.webp" width="1500" height="488" loading="lazy" alt="Published diagram showing GPT pretraining followed by supervised fine-tuning to generate phenotype mentions and ontology identifiers."/></a><figcaption>How GPT learns to turn a sentence into a phenotype mention and its identifier. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10801236/#fig2">Yang et al., Fig. 2C</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption></figure>
               <p>Clinicians can describe the same finding in many ways. We built PhenoGPT to recognize those descriptions in free text and link them to the Human Phenotype Ontology.</p>
-              <div class="cot-links"><a href="https://doi.org/10.1016/j.patter.2023.100887">Read the paper ↗</a><a href="https://github.com/WGLab/PhenoGPT">View code ↗</a></div>
+              <div class="cot-links"><a href="https://doi.org/10.1016/j.patter.2023.100887">Read the paper ↗</a><a href="https://github.com/WGLab/PhenoGPT">GitHub ↗</a></div>
             </article>
             <article class="card study-card">
               <small>Improving LLMs for rare disease diagnosis with RL-inspired preference tuning</small>
@@ -140,7 +141,7 @@
                 <p class="equation" aria-label="Odds ratio loss equals negative log sigmoid of the log odds of the preferred answer minus the log odds of the rejected answer">ℒ<sub>OR</sub> = −log σ(log odds<sub>preferred</sub> − log odds<sub>rejected</sub>)</p>
                 <p>The supervised term rewards reproducing the preferred answer. The odds-ratio term rewards assigning it higher odds than the rejected answer. The weight λ sets the balance.</p>
               </details>
-              <div class="cot-links"><a href="assets/mint-training.gif" data-tour="How MINT transfers a teacher’s rankings">Play training GIF</a><a href="https://doi.org/10.1016/j.patter.2026.101544">Paper ↗</a><a href="https://github.com/WGLab/MINT-LLM">Code ↗</a></div>
+              <div class="cot-links"><a href="assets/mint-training.gif" data-tour="How MINT transfers a teacher’s rankings">Play training GIF</a><a href="https://doi.org/10.1016/j.patter.2026.101544">Paper ↗</a><a href="https://github.com/WGLab/MINT-LLM">GitHub ↗</a></div>
             </article>
             <article id="cot-rag" class="card study-card">
               <small>Improving LLM reasoning with chain-of-thought and retrieval</small>
@@ -158,7 +159,7 @@
                   <div class="barline"><span>Reason, then retrieve</span><b>41.54%</b><div class="track"><div style="width:41.54%"></div></div></div>
                   <small>Selected comparisons from Fig. 2, Wang et al. (2026)</small>
                 </figure></details>
-              <div class="cot-links"><a href="https://doi.org/10.1002/mdb2.70033">Read the paper ↗</a><a href="https://github.com/WGLab/CoT-RAG-LLM-Gene-Prioritization-Disease-Diagnosis">View code ↗</a></div>
+              <div class="cot-links"><a href="https://doi.org/10.1002/mdb2.70033">Read the paper ↗</a><a href="https://github.com/WGLab/CoT-RAG-LLM-Gene-Prioritization-Disease-Diagnosis">GitHub ↗</a></div>
             </article>
           </div>
         </section>
@@ -209,7 +210,7 @@
               <div><small>Investment research tools</small>
               <h4>Investment research engine</h4>
               <p>I built a terminal to screen US and Chinese equities and compare investment ideas with macro and prediction-market signals. Each saved idea keeps my reasoning alongside the data I had that day.</p>
-              <a class="button" href="https://github.com/DWuuuuuu/investment-research-engine">Explore the code ↗</a></div>
+              <a class="button" href="https://github.com/DWuuuuuu/investment-research-engine">GitHub ↗</a></div>
               <fieldset class="terminal-gallery"><legend>Inside the terminal · illustrative examples</legend>
                 <input checked class="opt opt0" name="terminal" id="engine-us" type="radio"/><label for="engine-us">US equities</label>
                 <input class="opt opt1" name="terminal" id="engine-cn" type="radio"/><label for="engine-cn">A-shares</label>
