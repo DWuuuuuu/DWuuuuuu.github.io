@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Epigram · Jeremy D. Wu</title>
+    <meta content="Jeremy D. Wu’s portfolio of AI, econometrics and quantitative research." name="description"/>
+    <link href="favicon.svg" rel="icon"/>
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="mast">
+      <a class="brand" href="index.html"><i aria-hidden="true">W</i> Jeremy D. Wu</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#work">Work</a>
+        <a href="publications.html">Publications</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Résumé</a>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="pagehead">
+        <a href="index.html#work">← Selected work</a>
+        <h1>Epigram</h1>
+        <p>I build the practice platform and curate its quantitative reasoning problems. Each solution is checked by hand. This example comes from the public product walkthrough.</p>
+        <a href="https://epi-gram.app/">Visit Epigram ↗</a>
+      </div>
+      <article class="sample">
+        <small>Problem 259 · Conditional probability</small>
+        <h2>The painted cube</h2>
+        <p>A 3 × 3 × 3 cube is painted red on the outside and cut into 27 unit cubes. Choose one uniformly at random and roll it. The top face is red. What is the probability that you picked a corner cube?</p>
+        <details>
+          <summary>Solution 1 · Count painted faces</summary>
+          <p>Each cube and each orientation is equally likely, so each of the 54 painted unit faces is equally likely to be on top given that the top is red. Eight corners contribute three painted faces apiece. The probability is <strong>24/54 = 4/9.</strong></p>
+        </details>
+        <details>
+          <summary>Solution 2 · Condition on the observation</summary>
+          <p>A corner is chosen with probability 8/27 and shows red on top half the time. Across all cubes, 54 of 162 unit faces are painted, so a red top has probability 1/3. Bayes’ rule gives <strong>(8/27 × 1/2) ÷ (1/3) = 4/9.</strong></p>
+        </details>
+      </article>
+      <figure class="product">
+        <img alt="The same problem in Epigram’s production interface with its solution alongside" height="800" src="assets/epigram.jpg" width="1280"/>
+        <figcaption>The problem and solution as shown in Epigram’s public walkthrough.</figcaption>
+      </figure>
+    </main>
+    <footer>
+      <strong>Jeremy D. Wu</strong>
+      <nav aria-label="Contact and profiles">
+        <a href="mailto:jeremywu12345@gmail.com">Email</a>
+        <a href="https://github.com/DWuuuuuu">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=RGvMvRIAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/jeremydwu">LinkedIn</a>
+      </nav>
+    </footer>
+  </body>
+</html>

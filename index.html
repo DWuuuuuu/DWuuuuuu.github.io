@@ -1,219 +1,279 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jeremy D. Wu</title>
-<meta name="description" content="Jeremy D. Wu. AI, econometrics and quantitative research, measuring the social impact of machine learning systems. Causal inference. PhD in mathematics, Penn. MA in statistics, Wharton.">
-<meta name="author" content="Jeremy D. Wu">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-
-<header>
-  <h1>Jeremy D. Wu</h1>
-  <p class="tagline">AI, econometrics and quantitative research.</p>
-  <nav class="links" aria-label="Contact and profiles">
-    <a href="mailto:jeremywu12345@gmail.com">jeremywu12345@gmail.com</a>
-    <a href="https://scholar.google.com/citations?user=RGvMvRIAAAAJ&amp;hl=en">Google Scholar</a>
-    <a href="https://www.linkedin.com/in/jeremydwu">LinkedIn</a>
-  </nav>
-</header>
-
-<main id="main">
-
-<section class="intro">
-  <p>I am a mathematician by training. My PhD is in probability theory at the University of Pennsylvania, with a master's in statistics from Wharton taken alongside it. My published work runs across four fields that are usually four different people: causal inference, econometrics and quantitative research, machine learning and the evaluation of language models, and probability theory. I also build the data pipelines and test harnesses that work of that kind needs.</p>
-  <p>I believe the next real advances in scientific research and in industry will come from people and AI working together. That is how I work day to day. Claude Code and Codex are my primary development workflow, for research code, data pipelines and test suites. Verification is the part I own. I write property-based tests rather than output snapshots.</p>
-  <p>I want to put rigorous quantitative training to work on the societal side of AI, measuring what these systems do to the economy and to the people using them. I work at the intersection of AI and quantitative analysis and want to keep building there.</p>
-</section>
-
-<section>
-  <h2>Experience</h2>
-  <ul class="roles">
-    <li>
-      <div class="role-head">
-        <span class="org"><a href="https://epi-gram.app">Epigram</a></span>
-        <span class="when">Nov 2025 to present</span>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Work · Jeremy D. Wu</title>
+    <meta content="Jeremy D. Wu’s portfolio of AI, econometrics and quantitative research." name="description"/>
+    <link href="favicon.svg" rel="icon"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="project-demos.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="mast">
+      <a class="brand" href="index.html"><i aria-hidden="true">W</i> Jeremy D. Wu</a>
+      <nav aria-label="Main navigation">
+        <a aria-current="page" href="index.html#work">Work</a>
+        <a href="publications.html">Publications</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Résumé</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="intro-copy">
+          <h1>I want AI to make a measurable difference <em>in people’s lives.</em></h1>
+          <p>I’m Jeremy Wu, a mathematician by training. I want to build AI that helps people reason through hard problems and make decisions when the evidence is incomplete. My work draws on probability, statistics, econometrics, and machine learning.</p>
+          <p>I’m looking for an applied research role where I can build models, design experiments, and work with the people who use the results. <a href="about.html">More about me</a></p>
+        </div>
+        <figure class="walk-print">
+          <fieldset>
+            <legend>Random walks</legend>
+            <input class="opt opt0" id="many-walks" name="walks" type="radio" checked/>
+            <label for="many-walks">24 paths</label>
+            <input class="opt opt1" id="one-walk" name="walks" type="radio"/>
+            <label for="one-walk">1 path</label>
+            <button class="motion-switch" type="button" hidden>Animate paths</button>
+            <div class="panel panel0"><img src="assets/random-walk-ensemble.webp" data-animation="assets/random-walk-ensemble.gif" width="1160" height="830" alt="Twenty-four simulated paths spread across a lattice from the same open circle. One path is traced in dark green."/></div>
+            <div class="panel panel1"><img src="assets/random-walk-single.webp" data-animation="assets/random-walk-single.gif" width="1160" height="830" alt="The dark green path in isolation, from the open circle to the solid endpoint."/></div>
+          </fieldset>
+          <figcaption>Each path starts at the open circle and takes 128 steps, choosing among four directions with equal probability.</figcaption>
+        </figure>
+        <nav class="topic-jumps" aria-label="Explore projects by topic">
+          <a href="#interview-prep">Interview Prep ↓</a>
+          <a href="#ai-llm">AI/LLM ↓</a>
+          <a href="#quant-finance">Quant Finance ↓</a>
+        </nav>
+      </section>
+      <section class="research-interests" aria-labelledby="interests-title">
+        <h2 id="interests-title">Career interests</h2>
+        <dl>
+          <dt>Causal inference and AI economics</dt>
+          <dd>When a team adopts AI, whose work gets easier, and does the quality improve? I’d like to design experiments that answer those questions and help teams decide whether to expand a rollout.</dd>
+          <dt>Clinical foundation models</dt>
+          <dd>At Children’s Hospital of Philadelphia, I developed <a href="#gestaltmml">GestaltMML</a> and worked on <a href="#phenogpt">PhenoGPT</a> and <a href="#mint-llm">MINT-LLM</a>. I’d like to build models that read images alongside a patient’s history, track changes between visits, and learn from findings clinicians catch.</dd>
+          <dt>Frontier evaluation and post-training</dt>
+          <dd>Our <a href="publications.html#reversal-curse">reversal-curse study</a> examined why a model can learn a fact in one direction and miss it in reverse. I want to build tests that expose gaps like this and use the results to guide training and release decisions.</dd>
+          <dt>Math AI and formal verification</dt>
+          <dd>I’m interested in how AI can help mathematicians explore ideas and check proofs. I’d like to turn mathematical claims into statements a proof assistant can verify, then use its feedback to train models to construct better arguments.</dd>
+          <dt>Quantitative finance</dt>
+          <dd>At <a href="mina.html">Mina Analytics</a>, I led research on green alpha in real assets. We estimated how much additional rent a green certification might bring to a particular office building, giving owners a way to weigh that premium against the cost.</dd>
+        </dl>
+      </section>
+      <div id="work">
+        <section class="work-group" aria-labelledby="interview-prep">
+          <h2 id="interview-prep">Interview Prep</h2>
+          <article class="feature">
+            <div>
+              <h3>Epigram</h3>
+              <p>I built Epigram around the harder questions candidates encounter at quant firms. Pick a firm, work through a recent interview problem, then compare your reasoning with solutions I’ve checked by hand.</p>
+              <a class="button" href="epigram.html">Try a problem <span>→</span></a>
+            </div>
+            <figure class="epigram-demos">
+              <video controls playsinline muted preload="none" width="1280" height="800" poster="assets/epigram/problems.webp" src="assets/epigram/problems.mp4" aria-label="Epigram problem library walkthrough"></video>
+              <figcaption>
+                <nav class="demo-picker" aria-label="Epigram walkthroughs">
+                  <a href="assets/epigram/problems.mp4" aria-current="true">Problem library</a>
+                  <a href="assets/epigram/solutions.mp4">Solutions</a>
+                  <a href="assets/epigram/course.mp4">Four-week course</a>
+                  <a href="assets/epigram/mock.mp4">Mock interview</a>
+                </nav>
+              </figcaption>
+            </figure>
+          </article>
+        </section>
+        <section class="work-group" aria-labelledby="ai-llm">
+          <h2 id="ai-llm">AI/LLM</h2>
+          <div class="cards">
+            <article id="gestaltmml" class="card clinical">
+              <small>Multimodal AI</small>
+              <h3>GestaltMML</h3>
+              <p>At Children’s Hospital of Philadelphia, I developed GestaltMML to narrow the search for a rare genetic diagnosis. To our knowledge, it was the first convolution-free transformer to jointly encode facial photos, demographics, and clinical descriptions for this task. We tested it across 528 disorders.</p>
+              <figure class="paper-plate"><a href="assets/gestalt-architecture.webp" aria-label="Enlarge the figure"><img src="assets/gestalt-architecture.webp" width="1600" height="710" loading="lazy" alt="Image patches and clinical text enter a shared transformer encoder. A classification head ranks candidate syndromes."/></a><figcaption>Image patches and clinical words enter the same encoder, so the model can learn relationships between them. <a href="https://arxiv.org/html/2312.15320v3#S3.F1">Wu et al., Fig. 1C</a> · Photo inputs omitted.</figcaption></figure>
+              <fieldset>
+                <legend>Correct diagnosis ranked first, by benchmark split</legend>
+                <input checked="" class="opt opt0" id="split0" name="split" type="radio"/>
+                <label for="split0">Frequent</label>
+                <input class="opt opt1" id="split1" name="split" type="radio"/>
+                <label for="split1">Rare</label>
+                <div class="panel panel0">
+                  <div class="barline">
+                    <span>GestaltMML</span>
+                    <b>50.14%</b>
+                    <div class="track">
+                      <div style="width:50.14%"></div>
+                    </div>
+                  </div>
+                  <div class="barline">
+                    <span>Image-only ensemble</span>
+                    <b>43.02%</b>
+                    <div class="track">
+                      <div style="width:43.02%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel1">
+                  <div class="barline">
+                    <span>GestaltMML</span>
+                    <b>24.14%</b>
+                    <div class="track">
+                      <div style="width:24.14%"></div>
+                    </div>
+                  </div>
+                  <div class="barline">
+                    <span>Image-only ensemble</span>
+                    <b>19.77%</b>
+                    <div class="track">
+                      <div style="width:19.77%"></div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <a href="https://arxiv.org/html/2312.15320">Read the benchmark ↗</a>
+            </article>
+            <article class="card study-card">
+              <small>Clinical language models</small>
+              <h3 id="phenogpt">PhenoGPT</h3>
+              <p>A clinician can describe the same finding a dozen ways. We developed PhenoGPT to extract those findings from free text and link them to the Human Phenotype Ontology. Alongside our encoder, PhenoBCBERT, it surfaced descriptions that existing tools missed, including candidate terms beyond the ontology’s vocabulary.</p>
+              <figure class="paper-plate"><a href="assets/phenogpt-training.webp" aria-label="Enlarge the figure"><img src="assets/phenogpt-training.webp" width="1500" height="488" loading="lazy" alt="Published diagram showing GPT pretraining followed by supervised fine-tuning to generate phenotype mentions and ontology identifiers."/></a><figcaption>How GPT learns to turn a sentence into a phenotype mention and its identifier. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10801236/#fig2">Yang et al., Fig. 2C</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption></figure>
+              <div class="cot-links"><a href="https://doi.org/10.1016/j.patter.2023.100887">Read the paper ↗</a><a href="https://github.com/WGLab/PhenoGPT">View code ↗</a></div>
+            </article>
+            <article class="card study-card">
+              <small>Clinical model post-training</small>
+              <h3 id="mint-llm">MINT-LLM</h3>
+              <p>Can a model learn from patient images during training and still work when only a written note is available? We developed MINT to transfer that knowledge. A multimodal teacher ranks diagnoses using both the image and the note. Its rankings teach a smaller language model which answers to favor from text alone.</p>
+              <figure class="paper-plate"><a href="assets/mint-framework.webp" aria-label="Enlarge the figure"><img src="assets/mint-teacher.webp" width="1350" height="472" loading="lazy" alt="The teacher encodes text and images, ranks predictions, and turns high- and low-ranked candidates into paired responses."/></a><figcaption>The teacher creates a preference dataset from its rankings. <a href="assets/mint-framework.webp">See all four training pipelines</a> · <a href="https://doi.org/10.1016/j.patter.2026.101544">Wang et al., Fig. 1</a>.</figcaption></figure>
+              <details class="loss-note"><summary>Explore the training loss</summary>
+                <p class="equation" aria-label="ORPO loss equals the expected supervised loss plus lambda times the odds ratio loss">ℒ<sub>ORPO</sub> = 𝔼[ℒ<sub>SFT</sub> + λ ℒ<sub>OR</sub>]</p>
+                <p class="equation" aria-label="Odds ratio loss equals negative log sigmoid of the log odds of the preferred answer minus the log odds of the rejected answer">ℒ<sub>OR</sub> = −log σ(log odds<sub>preferred</sub> − log odds<sub>rejected</sub>)</p>
+                <p>The supervised term rewards reproducing the preferred answer. The odds-ratio term rewards assigning it higher odds than the rejected answer. The weight λ sets the balance.</p>
+              </details>
+              <div class="cot-links"><a href="assets/mint-training.gif" data-tour="How MINT transfers a teacher’s rankings">Play training GIF</a><a href="https://doi.org/10.1016/j.patter.2026.101544">Paper ↗</a><a href="https://github.com/WGLab/MINT-LLM">Code ↗</a></div>
+            </article>
+            <article id="cot-rag" class="card study-card">
+              <small>Rare disease research</small>
+              <h3>CoT-RAG</h3>
+              <p>We studied how large language models reason through a rare-disease case. CoT-RAG combines chain-of-thought prompting with a search of biomedical references to rank candidate diseases and genes. On noisy hospital notes, identifying the clinical clues before searching helped the model find more relevant evidence.</p>
+              <fieldset class="cot-exhibit">
+                <legend>Explore the study</legend>
+                <input class="opt opt0" id="cot-results" name="cot-view" type="radio"/>
+                <label for="cot-results">Gene rankings</label>
+                <input checked class="opt opt1" id="cot-methods" name="cot-view" type="radio"/>
+                <label for="cot-methods">Workflows</label>
+                <figure class="panel panel0">
+                  <figcaption><strong>How often was the correct gene in the top 10?</strong>DeepSeek-R1-Distill-Llama-70B on notes derived from Phenopackets, structured records of rare disease cases.</figcaption>
+                  <div class="barline"><span>Direct answer</span><b>11.72%</b><div class="track"><div style="width:11.72%"></div></div></div>
+                  <div class="barline"><span>Reasoning alone</span><b>41.18%</b><div class="track"><div style="width:41.18%"></div></div></div>
+                  <div class="barline"><span>Retrieve, then reason</span><b>42.13%</b><div class="track"><div style="width:42.13%"></div></div></div>
+                  <div class="barline"><span>Reason, then retrieve</span><b>41.54%</b><div class="track"><div style="width:41.54%"></div></div></div>
+                  <small>Selected comparisons from Fig. 2, Wang et al. (2026)</small>
+                </figure>
+                <figure class="panel panel1">
+                  <a href="assets/cot-rag-workflows.webp" aria-label="Enlarge the four workflow diagrams from Figure 1"><img loading="lazy" width="2000" height="1143" src="assets/cot-rag-workflows.webp" alt="Four workflows compare reasoning alone, retrieval alone, and two ways to combine them. Retrieval can use the raw note or the clinical features identified by the model."/></a>
+                  <figcaption><strong>What goes into the search?</strong>The two lower panels show how changing the order changes the query. <a href="assets/cot-rag-workflows.webp">Enlarge Figure 1</a> · <a href="https://arxiv.org/pdf/2503.12286v2#page=26">Wang et al.</a></figcaption>
+                </figure>
+              </fieldset>
+              <div class="cot-links"><a href="https://doi.org/10.1002/mdb2.70033">Read the paper ↗</a><a href="https://github.com/WGLab/CoT-RAG-LLM-Gene-Prioritization-Disease-Diagnosis">View code ↗</a></div>
+            </article>
+          </div>
+        </section>
+        <section class="work-group" aria-labelledby="quant-finance">
+          <h2 id="quant-finance">Quant Finance</h2>
+          <article class="feature mina-feature">
+            <div>
+              <small>Commercial real estate · Mina Analytics</small>
+              <h3>Measuring green alpha</h3>
+              <p>Where does a greener office building earn more rent, and is the premium large enough to justify certification? At Mina Analytics, I led the quantitative work behind our Real Estate Model. Charles Calomiris and I estimated how the lease-revenue premium for LEED and Energy Star varies from one property to the next, giving owners a way to weigh an upgrade against its cost.</p>
+              <a class="button" href="mina.html">Explore the model <span aria-hidden="true">→</span></a>
+              <a class="working-link" href="publications.html#econometrics">November 2025 working paper →</a>
+            </div>
+            <fieldset class="map-viewer"><legend>Estimated LEED premium by ZIP code</legend>
+              <input checked class="opt opt0" name="home-map" id="map-ca" type="radio"/><label for="map-ca">California</label>
+              <input class="opt opt1" name="home-map" id="map-fl" type="radio"/><label for="map-fl">Florida</label>
+              <figure class="panel panel0"><a href="assets/mina/california-leed.webp"><img src="assets/mina/california-leed.webp" width="1403" height="1643" loading="lazy" alt="California ZIP-code map of estimated LEED lease premiums, with darker blue for higher premiums."/></a><figcaption><a href="assets/mina/california-leed.webp">Enlarge California map</a> · <a href="mina.html#maps">Map sources</a></figcaption></figure>
+              <figure class="panel panel1"><a href="assets/mina/florida-leed.webp"><img src="assets/mina/florida-leed.webp" width="1498" height="1466" loading="lazy" alt="Florida ZIP-code map of estimated LEED lease premiums, with darker blue for higher premiums."/></a><figcaption><a href="assets/mina/florida-leed.webp">Enlarge Florida map</a> · <a href="mina.html#maps">Map sources</a></figcaption></figure>
+            </fieldset>
+          </article>
+          <div class="engine-row">
+            <template id="archived-quant-harness">
+            <article class="card quant">
+              <small>Systematic research</small>
+              <h3>Quant research harness</h3>
+              <p>A weekly reversal strategy looks profitable on a seeded synthetic dataset. Switch on modeled A-share trading costs to see why I rejected it.</p>
+              <fieldset>
+                <legend>Trading costs</legend>
+                <input checked="" class="opt opt0" id="cost0" name="cost" type="radio"/>
+                <label for="cost0">Before costs</label>
+                <input class="opt opt1" id="cost1" name="cost" type="radio"/>
+                <label for="cost1">After costs</label>
+                <div class="panel panel0">
+                  <strong class="metric">+7.16%</strong>
+                  <span>Annualized return</span>
+                  <div class="return-axis" aria-hidden="true"><i></i></div>
+                </div>
+                <div class="panel panel1">
+                  <strong class="metric">−5.26%</strong>
+                  <span>Annualized return</span>
+                  <div class="return-axis" aria-hidden="true"><i></i></div>
+                </div>
+              </fieldset>
+              <a href="https://github.com/DWuuuuuu/quant-research-harness#3-short-horizon-reversal-rejected">Explore the backtest ↗</a>
+            </article>
+            </template>
+            <article id="investment-engine" class="feature engine-feature">
+              <div><small>Investment research tools</small>
+              <h3>Investment research engine</h3>
+              <p>I built this terminal to make an investment thesis possible to revisit. I can screen US and Chinese equities, change the weights behind a ranking, and compare the idea with signals from prediction markets. Recording a candidate preserves both my reasoning and the data I had that day.</p>
+              <a class="button" href="https://github.com/DWuuuuuu/investment-research-engine">Explore the code ↗</a></div>
+              <fieldset class="terminal-gallery"><legend>Inside the terminal · illustrative examples</legend>
+                <input checked class="opt opt0" name="terminal" id="engine-us" type="radio"/><label for="engine-us">US equities</label>
+                <input class="opt opt1" name="terminal" id="engine-cn" type="radio"/><label for="engine-cn">A-shares</label>
+                <input class="opt opt2" name="terminal" id="engine-rank" type="radio"/><label for="engine-rank">Factor rankings</label>
+                <input class="opt opt3" name="terminal" id="engine-macro" type="radio"/><label for="engine-macro">China macro</label>
+                <figure class="panel panel0">
+                  <a href="assets/engine-us.webp"><img src="assets/engine-us.webp" width="1175" height="468" loading="lazy" alt="US deep-value results with four illustrative stocks and their valuation multiples."/></a>
+                  <figcaption>Four companies pass the deep-value screen. Demo Alloy has the lowest price-to-book ratio at 0.72. <a href="assets/engine-us.webp">Enlarge</a></figcaption>
+                </figure>
+                <figure class="panel panel1">
+                  <a href="assets/engine-cn.webp"><img src="assets/engine-cn.webp" width="1175" height="404" loading="lazy" alt="Three illustrative A-share companies in the high-return-on-equity screen."/></a>
+                  <figcaption>The screen selects companies with a return on equity of at least 15%. Demo Rail is the largest match by market cap. <a href="assets/engine-cn.webp">Enlarge</a></figcaption>
+                </figure>
+                <figure class="panel panel2">
+                  <a href="assets/engine-rank.webp"><img src="assets/engine-rank.webp" width="1175" height="468" loading="lazy" alt="Factor rankings for four illustrative stocks, led by Demo Freight with a score of 0.68."/></a>
+                  <figcaption>Demo Freight ranks first when value and growth get equal weight. The equity GIF shows how a momentum tilt changes the order. <a href="assets/engine-rank.webp">Enlarge</a></figcaption>
+                </figure>
+                <figure class="panel panel3">
+                  <a href="assets/engine-macro.webp"><img src="assets/engine-macro.webp" width="1175" height="638" loading="lazy" alt="Illustrative China dashboard showing manufacturing PMI, money supply growth and CSI 300 valuation."/></a>
+                  <figcaption>Manufacturing PMI is below 50, while the CSI 300 trades at 12.8 times earnings. The dashboard puts economic activity and equity valuations side by side. <a href="assets/engine-macro.webp">Enlarge</a></figcaption>
+                </figure>
+                <div class="terminal-tours">
+                  <a href="assets/engine-tour.gif" data-tour="Equity screen and factor rankings">Play equity GIF</a>
+                  <a href="assets/engine-macro.gif" data-tour="China macro dashboard">Play macro GIF</a>
+                </div>
+              </fieldset>
+            </article>
+          </div>
+        </section>
       </div>
-      <p class="title">Head of Product</p>
-      <ul class="what-list">
-        <li>Two Ivy League master's programs are institutional customers.</li>
-        <li>I own a labelled corpus of hundreds of probability, statistics and quantitative-reasoning problems, each with multiple verified solution paths, built as instruction material and as an evaluation set for reasoning models.</li>
-        <li>I set the solution approach first and steer the model down it, then check each solution by hand and assign the difficulty, topic and reasoning-type labels myself. Human and AI collaboration is how I think mathematics should be done, and that is how the corpus was built.</li>
-        <li>I ship and operate the production web application and problem database, Next.js on Supabase and Postgres, built with Claude Code and Codex.</li>
-        <li>Selected for the Beta University incubator program in Palo Alto.</li>
-      </ul>
-    </li>
-    <li>
-      <div class="role-head">
-        <span class="org">Mina Analytics</span>
-        <span class="when">Feb 2024 to Oct 2025</span>
-      </div>
-      <p class="title">Head of Quantitative Research</p>
-      <ul class="what-list">
-        <li>Co-authored the Real Estate Model with Chief Economist Charles W. Calomiris and estimated the causal revenue effect of green building certification.</li>
-        <li>The premium is a surface over location and time, and the model estimates it at that resolution. LEED at 8.3% in California and 3.9% in Florida, Energy Star at 7.7% and 7.3%. A single coefficient with no interactions returns 6.1% and 5.9% for LEED, understating one state and overstating the other at the same time.</li>
-        <li>It resolves to single buildings. Two uncertified towers in one downtown Los Angeles zip code: certifying the first is worth 12% more lease revenue per square foot, about $780K a year, and certifying the second is worth nothing.</li>
-        <li>Identification fits the full baseline with no certification term in it, then adds certification and its interactions. Certification is positively selected, so conditioning on the whole baseline first makes the estimate deliberately conservative. A model without building age attributes new construction to green, which is the error published elsewhere in the industry.</li>
-        <li>Ruled out cost pass-through as the mechanism. If landlords were recovering energy savings, lease type would order the effect. The triple-net interaction comes in at 0.30 against 0.39 where the tenant pays nothing, which is backwards, and lease type is not selected at all in Florida.</li>
-        <li>The estimates come from more than 36,000 building-year observations across 1,322 zip codes in California and Florida, drawn from a proprietary 10-terabyte database built over two years from 10,000 source datasets.</li>
-        <li>Built the AI and NLP measurement layer, engineering features out of noisy unstructured text. GPT-4o with targeted prompt engineering reached near-100% accuracy extracting structured attributes from broker descriptions, validated against hand-coded text, alongside LDA topic weights that a hedonic model can read as finish quality or accessibility.</li>
-        <li>Ran forward selection over 4,900 locational and 100 building-level candidates on incremental R-squared and then significance at 1%, with 9-fold cross-validation and percentile trimming. Final baselines of 881 variables in California and 709 in Florida, adjusted R-squared 0.713 and 0.615.</li>
-        <li>Presented findings to institutional investors and to the U.S. Securities and Exchange Commission. Supervised junior researchers across data engineering, feature construction and pipeline development.</li>
-      </ul>
-    </li>
-    <li>
-      <div class="role-head">
-        <span class="org">Children's Hospital of Philadelphia</span>
-        <span class="when">Jul 2023 to Jun 2025</span>
-      </div>
-      <p class="title">Research Postdoctoral Fellow</p>
-      <ul class="what-list">
-        <li>Built GestaltMML, the first multimodal machine-learning framework for rare disease diagnosis, raising Top-1 accuracy to 50.1% against 43.0% for the strongest published image-only baseline on a 528-disorder benchmark. Accepted at IEEE BIBM 2026.</li>
-        <li>Designed and evaluated preference-optimization methods for aligning language models of 3B to 11B parameters, using an upstream multimodal model as the preference generator in place of human expert annotation, since the clinical records are noisy and access-restricted and qualified annotators are scarce.</li>
-        <li>Developed a three-sided testing procedure for observational studies with two control groups, controlling the familywise error rate and bounding sensitivity to unmeasured confounding. Applied to the effect of high-school football participation on subsequent cognitive functioning, with D. Small at Wharton.</li>
-        <li>Built evaluation pipelines for multimodal and longitudinal clinical data, trained multimodal transformers of around 75M parameters, and contributed to pre-training medical foundation models on around 5M temporal clinical records.</li>
-        <li>Characterized the reversal curse and other deductive-reasoning failures in BERT and GPT-family models.</li>
-        <li>Invited speaker, Featured Symposium, 2024 American Society of Human Genetics Annual Meeting.</li>
-      </ul>
-    </li>
-    <li>
-      <div class="role-head">
-        <span class="org">University of Pennsylvania</span>
-        <span class="when">Jan 2024 to May 2024</span>
-      </div>
-      <p class="title">Lecturer</p>
-      <ul class="what-list">
-        <li>Taught PhD-level Probability Theory and Statistics (STAT 9310 / MATH 6490) to doctoral students in statistics, mathematics, and applied mathematics and computational science.</li>
-        <li>Faculty mentor for Undergraduate Research in Probability and Statistics.</li>
-        <li>Co-advised a master's thesis in pure mathematics and served on the defense committee.</li>
-      </ul>
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Education</h2>
-  <ul class="roles compact">
-    <li>
-      <div class="role-head">
-        <span class="org">University of Pennsylvania</span>
-        <span class="when">2018 to 2023</span>
-      </div>
-      <p class="title">PhD in Mathematics, probability theory</p>
-      <p class="what">Thesis: <a href="https://www.proquest.com/openview/acb2cfdb513656eef041118e019f2f57/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">Topics in Random Conformal Geometry: SLE Bubble Measures, Conformal Weldings of Liouville Quantum Gravity Surfaces, and Applications</a>.</p>
-      <p class="what">Benjamin Franklin Fellowship, Calabi Scholar.</p>
-    </li>
-    <li>
-      <div class="role-head">
-        <span class="org">The Wharton School, University of Pennsylvania</span>
-        <span class="when">2020 to 2022</span>
-      </div>
-      <p class="title">MA in Statistics</p>
-      <p class="what">Econometrics, time series, statistical learning, causal inference.</p>
-    </li>
-    <li>
-      <div class="role-head">
-        <span class="org">McGill University</span>
-        <span class="when">2014 to 2018</span>
-      </div>
-      <p class="title">BSc in Honours Mathematics</p>
-      <p class="what">Ranked first in Honours Mathematics. First Class Honours, Dean's Honour List.</p>
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Selected work</h2>
-  <ul class="work">
-    <li>
-      <h3><a href="https://epi-gram.app">Epigram</a></h3>
-      <p>A quantitative finance interview preparation platform, live in production. Problems of the kind quant interviews actually ask, each with multiple verified solution paths and labelled by difficulty, topic, reasoning type and source company.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/DWuuuuuu/quant-research-harness">quant-research-harness</a></h3>
-      <p>Backtesting harness for long-only cross-sectional equity strategies, with point-in-time data discipline, explicit transaction and tax costs, and a ten-module indicator inventory. 51 tests, including one that asserts directly that the engine cannot see the future.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/DWuuuuuu/investment-research-engine">investment-research-engine</a></h3>
-      <p>A research terminal for US and A-share equities and public prediction markets: cross-market screening, valuation, and macro and policy-path state in one workflow. 47 modules, 258 tests, running offline with no credentials.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/WGLab/GestaltMML">GestaltMML</a></h3>
-      <p>Multimodal rare disease diagnosis from facial images and clinical text. The published model and evaluation code. I am the only contributor to the repository. Wang Lab, CHOP.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/WGLab/MINT-LLM">MINT-LLM</a></h3>
-      <p>Transfers multimodal knowledge into language models through odds-ratio preference optimization. Published in <i>Patterns</i>, spotlight at the ICML 2025 GenBio Workshop. Wang Lab, CHOP.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/WGLab/CoT-RAG-LLM-Gene-Prioritization-Disease-Diagnosis">CoT-RAG gene prioritization</a></h3>
-      <p>Chain-of-thought prompting with retrieval-augmented generation for rare disease diagnosis. Five inference methods, FAISS retrieval over biomedical embeddings, reranking, and an automated evaluator. Wang Lab, CHOP.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/WGLab/PhenoGPT">PhenoGPT</a></h3>
-      <p>Phenotype recognition in clinical notes with language models, covering both an encoder approach and a generative one. The most used of these repositories. Wang Lab, CHOP.</p>
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Publications</h2>
-  <p class="byline">Published as Da Wu. † marks joint first authorship.</p>
-
-  <h3 class="group">Causal inference</h3>
-  <ol class="pubs">
-    <li><span class="pt">Three-sided Testing with Two Control Groups with an Application to an Observational Study of the Impact of High School Football Participation on Subsequent Cognitive Functioning.</span> Wu, D.†, Horng, I.†, Deshpande, S., Small, D. <span class="venue">Preprint.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1002/aur.70378">Characterizing Autism Phenotype Onset in the Electronic Health Records to Enable Age-Specific Screening.</a></span> Chen, F., Kneifati-Hayek, J., Zelin, C., Wu, D. et al. <span class="venue">Autism Research, 2026.</span></li>
-  </ol>
-
-  <h3 class="group">Econometrics and quantitative research</h3>
-  <ol class="pubs">
-    <li><span class="pt">Estimating Value Creation in Commercial Real Estate from Green Certification.</span> Calomiris, C.W. and Wu, J. <span class="venue">Mina Analytics working paper, 2025. Available on request.</span></li>
-  </ol>
-
-  <h3 class="group">Machine learning, language models and evaluation</h3>
-  <ol class="pubs">
-    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2026.101544">Multimodal integrated knowledge transfer to large language models through preference optimization with biomedical applications.</a></span> Wang, Z.†, Wu, D.†, Nguyen, Q.M., Xu, Z., Wang, K. <span class="venue">Patterns 7(8), 101544, 2026. Spotlight, ICML 2025 GenBio Workshop.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2024.101030">Exploring the reversal curse and other deductive logical reasoning in BERT and GPT-based large language models.</a></span> Wu, D.†, Yang, J.†, Wang, K. <span class="venue">Patterns 5(9), 101030, 2024.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2023.100860">Classification of integers based on residue classes via modern deep learning algorithms.</a></span> Wu, D., Yang, J., Ahsan, M.U., Wang, K. <span class="venue">Patterns 4(12), 2023.</span></li>
-    <li><span class="pt"><a href="https://arxiv.org/abs/2312.15320">GestaltMML: enhancing rare genetic disease diagnosis through multimodal machine learning combining facial images and clinical text.</a></span> Wu, D., Wang, Z., Chen, H. et al. <span class="venue">2026 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), accepted.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1016/j.patter.2023.100887">Enhancing phenotype recognition in clinical notes using large language models: PhenoBCBERT and PhenoGPT.</a></span> Yang, J., Liu, C., Deng, W., Wu, D., Weng, C., Zhou, Y., Wang, K. <span class="venue">Patterns 5(1), 2024.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1038/s41746-026-02733-z">Interpretable fine-tuned large language models facilitate making genetic test decisions for rare diseases.</a></span> Nguyen, Q.M., Chen, F., Liu, C., Campbell, I.M., Zhang, G., Wu, D. et al. <span class="venue">npj Digital Medicine, 2026.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1002/mdb2.70033">Integrating Chain-of-Thought and Retrieval Augmented Generation Enhances Rare Disease Diagnosis from Clinical Notes.</a></span> Wang, Z.†, Wu, D.†, Nguyen, Q., Wang, K. <span class="venue">Medicine Bulletin 2(2), 167–183, 2026.</span></li>
-  </ol>
-
-  <h3 class="group">Probability theory and mathematical statistics</h3>
-  <ol class="pubs">
-    <li><span class="pt"><a href="https://doi.org/10.30757/alea.v20-51">On Properties of Random Binary Contingency Tables with Non-Uniform Margin.</a></span> Wu, D. <span class="venue">ALEA, Latin American Journal of Probability and Mathematical Statistics 20, 1367–1383, 2023.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.1007/s10959-022-01234-5">Asymptotic Properties of Random Contingency Tables with Uniform Margin.</a></span> Wu, D. <span class="venue">Journal of Theoretical Probability 36, 2066–2092, 2023.</span></li>
-    <li><span class="pt"><a href="https://doi.org/10.47443/cm.2023.037">Asymptotic Enumeration of Binary Contingency Tables and Comparison with Independence Heuristic.</a></span> Wu, D. <span class="venue">Contributions to Mathematics 8, 16–23, 2023.</span></li>
-    <li><span class="pt"><a href="https://arxiv.org/abs/2302.13992">The SLE Bubble Measure via Conformal Welding of Quantum Surfaces.</a></span> Wu, D. <span class="venue">arXiv:2302.13992, 2023. Part of the <a href="https://www.proquest.com/openview/acb2cfdb513656eef041118e019f2f57/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">PhD thesis</a>.</span></li>
-  </ol>
-</section>
-
-<section>
-  <h2>Service</h2>
-  <p>Peer reviewer for NeurIPS, ICML, ICLR, PNAS, the Journal of Biomedical Informatics, and Artificial Intelligence in Medicine.</p>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <p>Email is the fastest route: <a href="mailto:jeremywu12345@gmail.com">jeremywu12345@gmail.com</a>.</p>
-  <p class="contact-list">
-    <a href="https://www.linkedin.com/in/jeremydwu">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=RGvMvRIAAAAJ&amp;hl=en">Google Scholar</a>
-    <a href="https://github.com/DWuuuuuu">GitHub</a>
-  </p>
-</section>
-
-</main>
-
-<footer>
-  <p>Jeremy D. Wu</p>
-</footer>
-</body>
+      <section class="endlink">
+        <h2>Publications</h2>
+        <p>Journal articles, conference work and manuscripts across four research areas.</p>
+        <a href="publications.html">Browse publications →</a>
+      </section>
+    </main>
+    <dialog class="tour-dialog" aria-labelledby="tour-title">
+      <header><h2 id="tour-title">Walkthrough</h2><form method="dialog"><button type="submit" autofocus>Close</button></form></header>
+      <img alt=""/>
+    </dialog>
+    <footer>
+      <strong>Jeremy D. Wu</strong>
+      <nav aria-label="Contact and profiles">
+        <a href="mailto:jeremywu12345@gmail.com">Email</a>
+        <a href="https://github.com/DWuuuuuu">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=RGvMvRIAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/jeremydwu">LinkedIn</a>
+      </nav>
+    </footer>
+  </body>
 </html>

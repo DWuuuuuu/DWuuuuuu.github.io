@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Résumé · Jeremy D. Wu</title>
+    <meta content="Jeremy D. Wu’s portfolio of AI, econometrics and quantitative research." name="description"/>
+    <link href="favicon.svg" rel="icon"/>
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="mast">
+      <a class="brand" href="index.html"><i aria-hidden="true">W</i> Jeremy D. Wu</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#work">Work</a>
+        <a href="publications.html">Publications</a>
+        <a href="about.html">About</a>
+        <a aria-current="page" href="resume.html">Résumé</a>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="pagehead">
+        <h1>Résumé</h1>
+        <p>Jeremy D. Wu · AI, econometrics and quantitative research</p>
+        <button class="textbtn" onclick="window.print()">Print or save PDF</button>
+      </div>
+      <div class="reading resume">
+        <section>
+          <h2>Experience</h2>
+          <ul class="roles">
+            <li>
+              <div class="role-head">
+                <span class="org"><a href="https://epi-gram.app">Epigram</a></span>
+                <span class="when">Nov 2025 to present</span>
+              </div>
+              <p class="title">Head of Product</p>
+              <ul class="what-list">
+                <li>Two Ivy League master's programs are institutional customers.</li>
+                <li>I own a labelled corpus of hundreds of probability, statistics and quantitative-reasoning problems, each with multiple verified solution paths, built as instruction material and as an evaluation set for reasoning models.</li>
+                <li>I set the solution approach first and steer the model down it, then check each solution by hand and assign the difficulty, topic and reasoning-type labels myself. Human and AI collaboration is how I think mathematics should be done, and that is how the corpus was built.</li>
+              </ul>
+              <details>
+                <summary>More about this role</summary>
+                <ul>
+                  <li>I ship and operate the production web application and problem database, Next.js on Supabase and Postgres, built with Claude Code and Codex.</li>
+                  <li>Selected for the Beta University incubator program in Palo Alto.</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <div class="role-head">
+                <span class="org"><a href="mina.html">Mina Analytics</a></span>
+                <span class="when">Feb 2024 to Oct 2025</span>
+              </div>
+              <p class="title">Head of Quantitative Research</p>
+              <ul class="what-list">
+                <li>Co-authored the Real Estate Model with Charles W. Calomiris and estimated how green certification relates to lease revenue after adjusting for building and location characteristics.</li>
+                <li>The premium is a surface over location and time, and the model estimates it at that resolution. LEED at 8.3% in California and 3.9% in Florida, Energy Star at 7.7% and 7.3%. A single coefficient with no interactions returns 6.1% and 5.9% for LEED, understating one state and overstating the other at the same time.</li>
+                <li>It resolves to single buildings. Two uncertified towers in one downtown Los Angeles zip code: certifying the first is worth 12% more lease revenue per square foot, about $780K a year, and certifying the second is worth nothing.</li>
+              </ul>
+              <details>
+                <summary>More about this role</summary>
+                <ul>
+                  <li>Estimated a baseline model of lease revenue before adding certification and its interactions. Certification is positively selected, so the estimates depend on how well the observed characteristics account for selection.</li>
+                  <li>Ruled out cost pass-through as the mechanism. If landlords were recovering energy savings, lease type would order the effect. The triple-net interaction comes in at 0.30 against 0.39 where the tenant pays nothing, which is backwards, and lease type is not selected at all in Florida.</li>
+                  <li>The estimates come from more than 36,000 building-year observations across 1,322 zip codes in California and Florida, drawn from a proprietary 10-terabyte database built over two years from 10,000 source datasets.</li>
+                  <li>Built the AI and NLP measurement layer, engineering features out of noisy unstructured text. GPT-4o with targeted prompt engineering reached near-100% accuracy extracting structured attributes from broker descriptions, validated against hand-coded text, alongside LDA topic weights that a hedonic model can read as finish quality or accessibility.</li>
+                  <li>Ran forward selection over 4,900 locational and 100 building-level candidates on incremental R-squared and then significance at 1%, with 9-fold cross-validation and percentile trimming. Final baselines of 881 variables in California and 709 in Florida, adjusted R-squared 0.713 and 0.615.</li>
+                  <li>Presented findings to institutional investors and to the U.S. Securities and Exchange Commission. Supervised junior researchers across data engineering, feature construction and pipeline development.</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <div class="role-head">
+                <span class="org">Children's Hospital of Philadelphia</span>
+                <span class="when">Jul 2023 to Jun 2025</span>
+              </div>
+              <p class="title">Research Postdoctoral Fellow</p>
+              <ul class="what-list">
+                <li>Developed GestaltMML to combine clinical text and facial images. On the GMDB-frequent test split, the model reached 50.14% top-1 accuracy against 43.02% for the image-only ensemble. Accepted at IEEE BIBM 2026.</li>
+                <li>Designed and evaluated preference-optimization methods for aligning language models of 3B to 11B parameters, using an upstream multimodal model as the preference generator in place of human expert annotation, since the clinical records are noisy and access-restricted and qualified annotators are scarce.</li>
+                <li>Developed a three-sided testing procedure for observational studies with two control groups, controlling the familywise error rate and bounding sensitivity to unmeasured confounding. Applied to the effect of high-school football participation on subsequent cognitive functioning, with D. Small at Wharton.</li>
+              </ul>
+              <details>
+                <summary>More about this role</summary>
+                <ul>
+                  <li>Built evaluation pipelines for multimodal and longitudinal clinical data, trained multimodal transformers of around 75M parameters, and contributed to pre-training medical foundation models on around 5M temporal clinical records.</li>
+                  <li>Characterized the reversal curse and other deductive-reasoning failures in BERT and GPT-family models.</li>
+                  <li>Invited speaker, Featured Symposium, 2024 American Society of Human Genetics Annual Meeting.</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <div class="role-head">
+                <span class="org">University of Pennsylvania</span>
+                <span class="when">Jan 2024 to May 2024</span>
+              </div>
+              <p class="title">Lecturer</p>
+              <ul class="what-list">
+                <li>Taught PhD-level Probability Theory and Statistics (STAT 9310 / MATH 6490) to doctoral students in statistics, mathematics, and applied mathematics and computational science.</li>
+                <li>Faculty mentor for Undergraduate Research in Probability and Statistics.</li>
+                <li>Co-advised a master's thesis in pure mathematics and served on the defense committee.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Education</h2>
+          <ul class="roles compact">
+            <li>
+              <div class="role-head">
+                <span class="org">University of Pennsylvania</span>
+                <span class="when">2018 to 2023</span>
+              </div>
+              <p class="title">PhD in Mathematics, probability theory</p>
+              <p class="what">Thesis: <a href="https://www.proquest.com/openview/acb2cfdb513656eef041118e019f2f57/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">Topics in Random Conformal Geometry: SLE Bubble Measures, Conformal Weldings of Liouville Quantum Gravity Surfaces, and Applications</a>.</p>
+              <p class="what">Benjamin Franklin Fellowship, Calabi Scholar.</p>
+            </li>
+            <li>
+              <div class="role-head">
+                <span class="org">The Wharton School, University of Pennsylvania</span>
+                <span class="when">2020 to 2022</span>
+              </div>
+              <p class="title">MA in Statistics</p>
+              <p class="what">Econometrics, time series, statistical learning, causal inference.</p>
+            </li>
+            <li>
+              <div class="role-head">
+                <span class="org">McGill University</span>
+                <span class="when">2014 to 2018</span>
+              </div>
+              <p class="title">BSc in Honours Mathematics</p>
+              <p class="what">Ranked first in Honours Mathematics. First Class Honours, Dean's Honour List.</p>
+            </li>
+          </ul>
+        </section>
+        <p><a href="publications.html">Publication list →</a></p>
+      </div>
+    </main>
+    <footer>
+      <strong>Jeremy D. Wu</strong>
+      <nav aria-label="Contact and profiles">
+        <a href="mailto:jeremywu12345@gmail.com">Email</a>
+        <a href="https://github.com/DWuuuuuu">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=RGvMvRIAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/jeremydwu">LinkedIn</a>
+      </nav>
+    </footer>
+    <script>
+      const roles = document.querySelectorAll('.resume details');
+      window.addEventListener('beforeprint', () => {
+        for (const role of roles) {
+          if (!role.open) {
+            role.dataset.openedForPrint = '';
+            role.open = true;
+          }
+        }
+      });
+      window.addEventListener('afterprint', () => {
+        for (const role of roles) {
+          if (role.hasAttribute('data-opened-for-print')) {
+            role.open = false;
+            delete role.dataset.openedForPrint;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

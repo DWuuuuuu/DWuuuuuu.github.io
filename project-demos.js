@@ -1,0 +1,79 @@
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+const walk = document.querySelector('.walk-print');
+const motionButton = walk.querySelector('.motion-switch');
+const paths = Array.from(walk.querySelectorAll('img[data-animation]'));
+const stills = paths.map(image => image.getAttribute('src'));
+let animate = !motionPreference.matches;
+
+function renderWalk() {
+  const selected = walk.querySelector('#many-walks').checked ? 0 : 1;
+  paths.forEach((image, index) => {
+    const source = animate && index === selected ? image.dataset.animation : stills[index];
+    if (image.getAttribute('src') !== source) image.src = source;
+  });
+  motionButton.textContent = animate ? 'Show still' : 'Animate paths';
+}
+
+motionButton.hidden = false;
+motionButton.addEventListener('click', () => {
+  animate = !animate;
+  renderWalk();
+});
+walk.addEventListener('change', renderWalk);
+motionPreference.addEventListener('change', () => {
+  animate = !motionPreference.matches;
+  renderWalk();
+});
+renderWalk();
+
+const video = document.querySelector('.epigram-demos video');
+const demoLinks = document.querySelectorAll('.demo-picker a');
+let previewStarted = false;
+
+for (const link of demoLinks) {
+  link.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    previewStarted = true;
+    if (video.src !== link.href) {
+      for (const item of demoLinks) item.removeAttribute('aria-current');
+      link.setAttribute('aria-current', 'true');
+      video.poster = link.href.replace(/\.mp4$/, '.webp');
+      video.src = link.href;
+      video.setAttribute('aria-label', 'Epigram walkthrough: ' + link.textContent);
+    }
+    video.play().catch(() => {}); // Native controls remain available when autoplay is blocked.
+  });
+}
+video.addEventListener('play', () => { previewStarted = true; });
+motionPreference.addEventListener('change', () => {
+  if (motionPreference.matches) video.pause();
+});
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) {
+      video.pause();
+    } else if (entry.intersectionRatio >= 0.6 && !previewStarted && !motionPreference.matches) {
+      previewStarted = true;
+      video.play().catch(() => {});
+    }
+  }, {threshold: [0, 0.6]}).observe(video);
+}
+
+const tourDialog = document.querySelector('.tour-dialog');
+if (tourDialog && typeof tourDialog.showModal === 'function') {
+  const tourImage = tourDialog.querySelector('img');
+  const tourTitle = tourDialog.querySelector('h2');
+  for (const link of document.querySelectorAll('a[data-tour]')) {
+    link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      tourTitle.textContent = link.dataset.tour;
+      tourImage.src = link.href;
+      tourImage.alt = link.dataset.tour;
+      tourDialog.showModal();
+    });
+  }
+  tourDialog.addEventListener('close', () => { tourImage.removeAttribute('src'); });
+}

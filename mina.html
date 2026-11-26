@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Mina Analytics · Jeremy D. Wu</title>
+    <meta content="Jeremy D. Wu’s work on Mina Analytics’ building-level lease revenue model, with published certification estimates for California and Florida." name="description"/>
+    <link href="favicon.svg" rel="icon"/>
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="mast">
+      <a class="brand" href="index.html"><i aria-hidden="true">W</i> Jeremy D. Wu</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#work">Work</a>
+        <a href="publications.html">Publications</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Résumé</a>
+      </nav>
+    </header>
+    <main id="main" class="mina-case">
+      <div class="pagehead">
+        <a href="index.html#quant-finance">← Quant Finance</a>
+        <h1>Mina Analytics<br><em>Real Estate Model</em></h1>
+        <p>Our goal at Mina was to put a property-level estimate on green alpha. In our 2025 working paper, Charles Calomiris and I studied what LEED and Energy Star certification could add to office lease revenue in California and Florida. That estimate gives an owner a starting point for deciding where certification is worth the investment.</p>
+      </div>
+      <section class="mina-section" aria-labelledby="contribution">
+        <h2 id="contribution">My contribution</h2>
+        <div><p>As Head of Quantitative Research, I co-authored the model with Chief Economist Charles W. Calomiris. I built the AI and NLP measurement layer and designed the econometric comparison. Moses Rahnama led the research program and built the underlying data pipeline.</p>
+        <p>Broker descriptions contain information that standard property records miss. I used language models to turn mentions of features such as rooftop decks into indicators, checked the results against hand-coded text, and used topic models to capture descriptions of finishes and accessibility.</p></div>
+      </section>
+      <section class="mina-section" aria-labelledby="states">
+        <div><h2 id="states">Compare the markets</h2><p>Estimated premium in lease revenue per square foot for an uncertified building obtaining certification.</p></div>
+        <div class="mina-exhibit">
+          <fieldset>
+            <legend>Certification</legend>
+            <input class="opt opt0" id="leed" name="certificate" type="radio" checked><label for="leed">LEED</label>
+            <input class="opt opt1" id="energy" name="certificate" type="radio"><label for="energy">Energy Star</label>
+            <div class="panel panel0">
+              <div class="barline"><span>California</span><b>10.31%</b><div class="track"><div style="width:68.73%"></div></div></div>
+              <div class="barline"><span>Florida</span><b>7.20%</b><div class="track"><div style="width:48%"></div></div></div>
+            </div>
+            <div class="panel panel1">
+              <div class="barline"><span>California</span><b>12.52%</b><div class="track"><div style="width:83.47%"></div></div></div>
+              <div class="barline"><span>Florida</span><b>5.48%</b><div class="track"><div style="width:36.53%"></div></div></div>
+            </div>
+          </fieldset>
+          <a href="assets/mina/mina-primer-july-2025.pdf#page=5">July 2025 primer, p. 5 ↗</a>
+        </div>
+      </section>
+      <section class="mina-maps" id="maps" aria-labelledby="map-heading">
+        <h2 id="map-heading">Green certification by ZIP code</h2>
+        <p>These maps from Mina Analytics show how the estimated lease premium varies within each state. Blue ranges from less than 2% to more than 10%. Gray marks ZIP codes outside the sample. Select a map to inspect its original legend at full size.</p>
+        <div class="map-pair">
+          <figure class="zip-map">
+            <a href="assets/mina/california-leed.webp" aria-label="Open full-size map: California · LEED"><img src="assets/mina/california-leed.webp" width="1403" height="1643" alt="California ZIP codes shaded by estimated LEED lease premium. Some northern interior and southern coastal ZIP codes fall in the highest category; much of the state is outside the sample." loading="lazy"></a>
+            <figcaption><strong>California · LEED</strong><a href="assets/mina/green-buildings-fl-ca.pdf#page=5">Source PDF, page 5</a></figcaption>
+          </figure>
+          <figure class="zip-map">
+            <a href="assets/mina/florida-leed.webp" aria-label="Open full-size map: Florida · LEED"><img src="assets/mina/florida-leed.webp" width="1498" height="1466" alt="Florida ZIP codes shaded by estimated LEED lease premium, with a mix of lighter and darker bands along the coasts and gaps in inland sample coverage." loading="lazy"></a>
+            <figcaption><strong>Florida · LEED</strong><a href="assets/mina/green-buildings-fl-ca.pdf#page=4">Source PDF, page 4</a></figcaption>
+          </figure>
+        </div>
+        <details class="extra-map"><summary>View the Florida Energy Star map</summary>
+          <figure class="zip-map">
+            <a href="assets/mina/florida-energy-star.webp" aria-label="Open full-size map: Florida · Energy Star"><img src="assets/mina/florida-energy-star.webp" width="1349" height="1248" alt="Florida ZIP codes shaded by estimated Energy Star lease premium. Dark-blue ZIP codes with estimates above 10% appear in several parts of the state." loading="lazy"></a>
+            <figcaption><strong>Florida · Energy Star</strong><a href="assets/mina/mina-primer-july-2025.pdf#page=7">Source PDF, page 7</a></figcaption>
+          </figure>
+        </details>
+      </section>
+      <section class="mina-section" aria-labelledby="interpretation">
+        <h2 id="interpretation">From a state average to a building</h2>
+        <div><p>The July primer illustrates why a state average can mislead an owner. For two properties in the same Los Angeles ZIP code, REM estimated LEED premiums of 13.1% and 7.0%. An owner could weigh the estimated revenue uplift against the cost of certification before commissioning a more detailed assessment.</p>
+        <p>Newer buildings are more likely to be certified and can already command higher rents. We estimated baseline revenue using building and location characteristics, then added certification and its interactions. Unmeasured differences can still affect these observational estimates.</p></div>
+      </section>
+      <section class="mina-section" aria-labelledby="reports">
+        <h2 id="reports">Reports and methods</h2>
+        <div><ul class="report-list">
+          <li><a href="assets/mina/mina-primer-july-2025.pdf">Company primer</a> · July 2025, with building-level examples</li>
+          <li><a href="assets/mina/green-buildings-fl-ca.pdf">Green buildings in Florida and California</a> · Certification study</li>
+          <li><a href="assets/mina/garage-parking-fl-ca.pdf">Garage parking in Florida and California</a> · Amenity study</li>
+        </ul><p class="method-links">Methodology PDFs · <a href="assets/mina/rem-part-1-intro.pdf">Model overview</a> · <a href="assets/mina/rem-part-2-dataset.pdf">Dataset construction</a> · <a href="assets/mina/rem-part-3-coverage.pdf">Variable selection</a></p>
+        <p><a href="publications.html#econometrics">November 2025 working paper →</a></p></div>
+      </section>
+    </main>
+    <footer>
+      <strong>Jeremy D. Wu</strong>
+      <nav aria-label="Contact and profiles">
+        <a href="mailto:jeremywu12345@gmail.com">Email</a>
+        <a href="https://github.com/DWuuuuuu">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=RGvMvRIAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/jeremydwu">LinkedIn</a>
+      </nav>
+    </footer>
+  </body>
+</html>
