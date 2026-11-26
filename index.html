@@ -7,7 +7,7 @@
     <meta content="Jeremy D. Wu’s portfolio of AI, econometrics and quantitative research." name="description"/>
     <link href="favicon.svg" rel="icon"/>
     <link href="styles.css?v=portfolio-2" rel="stylesheet"/>
-    <script src="project-demos.js?v=portfolio-2" defer></script>
+    <script src="project-demos.js?v=portfolio-3" defer></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -60,7 +60,7 @@
               <a class="button" href="epigram.html">Try a problem <span>→</span></a>
             </div>
             <figure class="epigram-demos">
-              <video controls playsinline muted preload="none" width="1280" height="800" poster="assets/epigram/problems.webp" src="assets/epigram/problems.mp4" aria-label="Epigram problem library walkthrough"></video>
+              <video controls playsinline muted loop preload="none" width="1280" height="800" poster="assets/epigram/problems.webp" src="assets/epigram/problems.mp4" aria-label="Epigram problem library walkthrough"></video>
               <figcaption>
                 <nav class="demo-picker" aria-label="Epigram walkthroughs">
                   <a href="assets/epigram/problems.mp4" aria-current="true">Problem library</a>
@@ -76,10 +76,10 @@
           <h3 id="ai-llm">AI/LLM</h3>
           <div class="cards">
             <article id="gestaltmml" class="card clinical">
-              <small>Multimodal AI</small>
+              <small>A convolution-free multimodal transformer for rare disease diagnosis</small>
               <h4>GestaltMML</h4>
               <figure class="paper-plate"><a href="assets/gestalt-architecture.webp" aria-label="Enlarge the figure"><img src="assets/gestalt-architecture.webp" width="1600" height="710" loading="lazy" alt="Image patches and clinical text enter a shared transformer encoder. A classification head ranks candidate syndromes."/></a><figcaption>Image patches and clinical words enter the same encoder, so the model can learn relationships between them. <a href="https://arxiv.org/html/2312.15320v3#S3.F1">Wu et al., Fig. 1C</a> · Photo inputs omitted.</figcaption></figure>
-              <p>At Children’s Hospital of Philadelphia, I built a transformer that combines facial photos, demographics, and clinical notes to rank possible diagnoses. We tested it across 528 rare disorders.</p>
+              <p>At Children’s Hospital of Philadelphia, I built GestaltMML to rank possible diagnoses across 528 rare disorders. To our knowledge, it was the first convolution-free transformer to jointly encode facial photos, demographics, and clinical text for this task.</p>
               <details class="study-details"><summary>Compare benchmark results</summary>
               <fieldset>
                 <legend>Correct diagnosis ranked first, by benchmark split</legend>
@@ -124,14 +124,14 @@
               <a href="https://arxiv.org/html/2312.15320">Read the benchmark ↗</a>
             </article>
             <article class="card study-card">
-              <small>Clinical language models</small>
+              <small>A transformer decoder for clinical phenotype extraction</small>
               <h4 id="phenogpt">PhenoGPT</h4>
               <figure class="paper-plate"><a href="assets/phenogpt-training.webp" aria-label="Enlarge the figure"><img src="assets/phenogpt-training.webp" width="1500" height="488" loading="lazy" alt="Published diagram showing GPT pretraining followed by supervised fine-tuning to generate phenotype mentions and ontology identifiers."/></a><figcaption>How GPT learns to turn a sentence into a phenotype mention and its identifier. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10801236/#fig2">Yang et al., Fig. 2C</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption></figure>
               <p>Clinicians can describe the same finding in many ways. We built PhenoGPT to recognize those descriptions in free text and link them to the Human Phenotype Ontology.</p>
               <div class="cot-links"><a href="https://doi.org/10.1016/j.patter.2023.100887">Read the paper ↗</a><a href="https://github.com/WGLab/PhenoGPT">View code ↗</a></div>
             </article>
             <article class="card study-card">
-              <small>ORPO · An alternative to reinforcement learning</small>
+              <small>Improving LLMs for rare disease diagnosis with RL-inspired preference tuning</small>
               <h4 id="mint-llm">MINT-LLM</h4>
               <figure class="paper-plate"><a href="assets/mint-framework.webp" aria-label="Enlarge the figure"><img src="assets/mint-teacher.webp" width="1350" height="472" loading="lazy" alt="The teacher encodes text and images, ranks predictions, and turns high- and low-ranked candidates into paired responses."/></a><figcaption>The teacher creates a preference dataset from its rankings. <a href="assets/mint-framework.webp">See all four training pipelines</a> · <a href="https://doi.org/10.1016/j.patter.2026.101544">Wang et al., Fig. 1</a>.</figcaption></figure>
               <p>We trained a text-only model to benefit from medical images. A teacher sees both the image and the clinical note and ranks possible diagnoses. Odds ratio preference optimization (ORPO) uses those rankings to teach the smaller model which answers to favor.</p>
@@ -143,7 +143,7 @@
               <div class="cot-links"><a href="assets/mint-training.gif" data-tour="How MINT transfers a teacher’s rankings">Play training GIF</a><a href="https://doi.org/10.1016/j.patter.2026.101544">Paper ↗</a><a href="https://github.com/WGLab/MINT-LLM">Code ↗</a></div>
             </article>
             <article id="cot-rag" class="card study-card">
-              <small>Rare disease research</small>
+              <small>Improving LLM reasoning with chain-of-thought and retrieval</small>
               <h4>CoT-RAG</h4>
               <figure class="paper-plate">
                   <a href="assets/cot-rag-workflows.webp" aria-label="Enlarge the four workflow diagrams from Figure 1"><img loading="lazy" width="2000" height="1143" src="assets/cot-rag-workflows.webp" alt="Four workflows compare reasoning alone, retrieval alone, and two ways to combine them. Retrieval can use the raw note or the clinical features identified by the model."/></a>
@@ -166,7 +166,7 @@
           <h3 id="quant-finance">Quant Finance</h3>
           <article class="feature mina-feature">
             <div>
-              <small>Commercial real estate · Mina Analytics</small>
+              <small>Quantitative research and econometric modeling · Mina Analytics</small>
               <h4>Measuring green alpha</h4>
               <p>At Mina Analytics, I led research on what green certification is worth to an office building. Charles Calomiris and I estimated how lease premiums vary by property, giving owners a way to weigh an upgrade against its cost.</p>
               <a class="button" href="mina.html">Explore the model <span aria-hidden="true">→</span></a>

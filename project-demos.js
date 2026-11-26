@@ -4,7 +4,7 @@ const walk = document.querySelector('.walk-print');
 const motionButton = walk.querySelector('.motion-switch');
 const paths = Array.from(walk.querySelectorAll('img[data-animation]'));
 const stills = paths.map(image => image.getAttribute('src'));
-let animate = false;
+let animate = !motionPreference.matches;
 
 function renderWalk() {
   const selected = walk.querySelector('#many-walks').checked ? 0 : 1;
@@ -22,14 +22,15 @@ motionButton.addEventListener('click', () => {
 });
 walk.addEventListener('change', renderWalk);
 motionPreference.addEventListener('change', () => {
-  if (motionPreference.matches) animate = false;
+  animate = !motionPreference.matches;
   renderWalk();
 });
 renderWalk();
 
 const video = document.querySelector('.epigram-demos video');
 const demoLinks = document.querySelectorAll('.demo-picker a');
-
+let videoVisible = false;
+let resumeOnReturn = true;
 
 for (const link of demoLinks) {
   link.addEventListener('click', event => {
@@ -45,13 +46,31 @@ for (const link of demoLinks) {
     video.play().catch(() => {}); // Native controls remain available when autoplay is blocked.
   });
 }
+function startPreview() {
+  if (!motionPreference.matches && resumeOnReturn) video.play().catch(() => {});
+}
+
 motionPreference.addEventListener('change', () => {
-  if (motionPreference.matches) video.pause();
+  if (motionPreference.matches) {
+    video.pause();
+  } else if (videoVisible) {
+    startPreview();
+  }
 });
 if ('IntersectionObserver' in window) {
   new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) video.pause();
-  }).observe(video);
+    const visible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+    if (visible === videoVisible) return;
+    videoVisible = visible;
+    if (visible) {
+      startPreview();
+    } else {
+      resumeOnReturn = !video.paused;
+      video.pause();
+    }
+  }, { threshold: [0, 0.25] }).observe(video);
+} else {
+  startPreview();
 }
 
 const tourDialog = document.querySelector('.tour-dialog');
