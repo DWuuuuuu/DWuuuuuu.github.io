@@ -131,10 +131,10 @@
               <div class="cot-links"><a href="https://doi.org/10.1016/j.patter.2023.100887">Read the paper ↗</a><a href="https://github.com/WGLab/PhenoGPT">View code ↗</a></div>
             </article>
             <article class="card study-card">
-              <small>Clinical model post-training</small>
+              <small>ORPO · An alternative to reinforcement learning</small>
               <h4 id="mint-llm">MINT-LLM</h4>
               <figure class="paper-plate"><a href="assets/mint-framework.webp" aria-label="Enlarge the figure"><img src="assets/mint-teacher.webp" width="1350" height="472" loading="lazy" alt="The teacher encodes text and images, ranks predictions, and turns high- and low-ranked candidates into paired responses."/></a><figcaption>The teacher creates a preference dataset from its rankings. <a href="assets/mint-framework.webp">See all four training pipelines</a> · <a href="https://doi.org/10.1016/j.patter.2026.101544">Wang et al., Fig. 1</a>.</figcaption></figure>
-              <p>We trained a text-only model to benefit from medical images. A teacher sees both the image and the clinical note, then ranks diagnoses so the smaller model can learn which answers to favor.</p>
+              <p>We trained a text-only model to benefit from medical images. A teacher sees both the image and the clinical note and ranks possible diagnoses. Odds ratio preference optimization (ORPO) uses those rankings to teach the smaller model which answers to favor.</p>
               <details class="loss-note"><summary>Explore the training loss</summary>
                 <p class="equation" aria-label="ORPO loss equals the expected supervised loss plus lambda times the odds ratio loss">ℒ<sub>ORPO</sub> = 𝔼[ℒ<sub>SFT</sub> + λ ℒ<sub>OR</sub>]</p>
                 <p class="equation" aria-label="Odds ratio loss equals negative log sigmoid of the log odds of the preferred answer minus the log odds of the rejected answer">ℒ<sub>OR</sub> = −log σ(log odds<sub>preferred</sub> − log odds<sub>rejected</sub>)</p>
